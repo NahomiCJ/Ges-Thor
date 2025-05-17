@@ -9,3 +9,4 @@ C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.CoreCompileI
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.exe
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.pdb
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.AddModEquipo.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.SolResRec.resources

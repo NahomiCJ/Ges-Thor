@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddModEquipo));
             this.lbl1 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -41,7 +42,9 @@
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.lblDis = new System.Windows.Forms.Label();
             this.chbDisponibilidad = new System.Windows.Forms.CheckBox();
+            this.pb1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl1
@@ -160,11 +163,22 @@
             this.chbDisponibilidad.Text = "checkBox1";
             this.chbDisponibilidad.UseVisualStyleBackColor = true;
             // 
+            // pb1
+            // 
+            this.pb1.BackColor = System.Drawing.Color.Transparent;
+            this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
+            this.pb1.Location = new System.Drawing.Point(650, -11);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(138, 147);
+            this.pb1.TabIndex = 16;
+            this.pb1.TabStop = false;
+            // 
             // AddModEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pb1);
             this.Controls.Add(this.chbDisponibilidad);
             this.Controls.Add(this.lblDis);
             this.Controls.Add(this.cbEstado);
@@ -182,6 +196,7 @@
             this.Text = "AddModEquipo";
             this.Load += new System.EventHandler(this.AddModEquipo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +217,6 @@
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label lblDis;
         private System.Windows.Forms.CheckBox chbDisponibilidad;
+        private System.Windows.Forms.PictureBox pb1;
     }
 }

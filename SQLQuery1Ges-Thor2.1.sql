@@ -82,8 +82,7 @@ select * from Equipo where Estado_Equipo = 'Disponible'
 select * from Administrador
 
 
-
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE OR ALTER VIEW vwInventario AS
 	SELECT
 		Id_Equipo AS ID,
@@ -124,14 +123,14 @@ DROP spi_AgEquipo
 
 
 	
-	EXEC spi_AgEquipo
+/*	EXEC spi_AgEquipo
   @Nombre = 'Laptop',
   @Cantidad = 10,
   @Estado = 'Disponible',
   @Disponibilidad = 1;
 
   delete from Equipo where Id_Equipo = 11
-
+  */
   
 
 CREATE OR ALTER PROCEDURE spu_ModEquipo 

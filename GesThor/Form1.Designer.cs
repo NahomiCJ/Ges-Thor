@@ -35,6 +35,7 @@
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.btnAg = new System.Windows.Forms.Button();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Volver al menu";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnMod
             // 
@@ -71,7 +73,7 @@
             // 
             this.pb1.BackColor = System.Drawing.Color.Transparent;
             this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
-            this.pb1.Location = new System.Drawing.Point(685, -11);
+            this.pb1.Location = new System.Drawing.Point(682, -9);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(138, 147);
             this.pb1.TabIndex = 4;
@@ -95,11 +97,23 @@
             this.dgvInventario.Size = new System.Drawing.Size(546, 268);
             this.dgvInventario.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(29, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.btnAg);
             this.Controls.Add(this.pb1);
@@ -123,6 +137,7 @@
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.Button btnAg;
         private System.Windows.Forms.DataGridView dgvInventario;
+        private System.Windows.Forms.Button button1;
     }
 }
 
