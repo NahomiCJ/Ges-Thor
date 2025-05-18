@@ -11,7 +11,7 @@ namespace GesThor
 {
     class Operacion
     {
-        string conexion = "Data Source = DESKTOP-TE3EHHL\\SQLEXPRESS; Initial Catalog = GesThor; integrated security = true;";
+        string conexion = "Data Source = localhost\\SQLEXPRESS; Initial Catalog = GesThor; integrated security = true;";
         public DataTable Cargar()
         {
             DataTable dt = new DataTable();

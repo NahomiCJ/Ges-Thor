@@ -175,7 +175,7 @@
             // 
             this.pb1.BackColor = System.Drawing.Color.Transparent;
             this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
-            this.pb1.Location = new System.Drawing.Point(665, -25);
+            this.pb1.Location = new System.Drawing.Point(660, -19);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(138, 147);
             this.pb1.TabIndex = 34;
