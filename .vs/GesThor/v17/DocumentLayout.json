@@ -5,6 +5,38 @@
     {
       "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|c:\\users\\kira\\source\\repos\\gesthor\\gesthor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|C:\\Users\\KIRA\\source\\repos\\GesThor\\gesthor\\solresrec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\solresrec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|C:\\Users\\KIRA\\source\\repos\\GesThor\\gesthor\\solresrec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\solresrec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|C:\\Users\\KIRA\\source\\repos\\GesThor\\gesthor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|C:\\Users\\KIRA\\source\\repos\\GesThor\\gesthor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|C:\\Users\\KIRA\\source\\repos\\GesThor\\gesthor\\addmodequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\addmodequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|C:\\Users\\KIRA\\source\\repos\\GesThor\\gesthor\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|C:\\Users\\KIRA\\source\\repos\\GesThor\\gesthor\\addmodequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\addmodequipo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|C:\\Users\\KIRA\\source\\repos\\GesThor\\gesthor\\operacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C6F099C-44DD-428D-BD1D-1073E619DE88}|GesThor\\GesThor.csproj|solutionrelative:gesthor\\operacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +46,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\Program.cs",
+              "RelativeDocumentMoniker": "GesThor\\Program.cs",
+              "ToolTip": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\Program.cs",
+              "RelativeToolTip": "GesThor\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T03:30:33.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SolResRec.cs",
+              "DocumentMoniker": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\SolResRec.cs",
+              "RelativeDocumentMoniker": "GesThor\\SolResRec.cs",
+              "ToolTip": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\SolResRec.cs",
+              "RelativeToolTip": "GesThor\\SolResRec.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwB4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T14:00:29.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SolResRec.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\SolResRec.cs",
+              "RelativeDocumentMoniker": "GesThor\\SolResRec.cs",
+              "ToolTip": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\SolResRec.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GesThor\\SolResRec.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T13:23:30.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddModEquipo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\AddModEquipo.cs",
+              "RelativeDocumentMoniker": "GesThor\\AddModEquipo.cs",
+              "ToolTip": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\AddModEquipo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GesThor\\AddModEquipo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T13:45:13.398Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -27,6 +105,54 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T13:47:37.989Z",
               "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\Form1.cs",
+              "RelativeDocumentMoniker": "GesThor\\Form1.cs",
+              "ToolTip": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\Form1.cs",
+              "RelativeToolTip": "GesThor\\Form1.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAIwDUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T13:41:13.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "GesThor\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\Form1.Designer.cs",
+              "RelativeToolTip": "GesThor\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T03:20:03.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddModEquipo.cs",
+              "DocumentMoniker": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\AddModEquipo.cs",
+              "RelativeDocumentMoniker": "GesThor\\AddModEquipo.cs",
+              "ToolTip": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\AddModEquipo.cs",
+              "RelativeToolTip": "GesThor\\AddModEquipo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T16:21:04.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Operacion.cs",
+              "DocumentMoniker": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\Operacion.cs",
+              "RelativeDocumentMoniker": "GesThor\\Operacion.cs",
+              "ToolTip": "C:\\Users\\KIRA\\source\\repos\\GesThor\\GesThor\\Operacion.cs",
+              "RelativeToolTip": "GesThor\\Operacion.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T13:48:18.668Z"
             }
           ]
         }
