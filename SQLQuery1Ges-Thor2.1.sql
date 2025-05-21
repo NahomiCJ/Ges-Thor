@@ -157,3 +157,27 @@ BEGIN
 END;
 
 
+
+select * from Prestamo;
+
+CREATE PROCEDURE ObtenerPrestamosPorMatricula
+    @Matricula NVARCHAR(50)
+AS
+BEGIN
+    SELECT 
+        P.Id_Prestamo,
+        U.Matricula_Clave,
+        P.Fecha_Prestamo,
+        P.Fecha_Devolucion,
+        P.Fecha_DevolucionReal,
+        P.Status_Prestamo
+    FROM Prestamo P
+    INNER JOIN Usuario U ON P.Id_Usuario = U.Id_Usuario
+    INNER JOIN Equipo E ON P.Id_Equipo = E.Id_Equipo
+    WHERE U.Matricula_Clave = @Matricula;
+END;
+
+select * from Usuario
+
+Insert into Usuario (Matricula_Clave,Carrera_Usuario,Correo_Usuario,Telefono_Usuario) values ('221000139','ISIC','SaulHR24@hotmail.com','872161466'),
+('221000101','ISIC','lynda.castillo.22isc@tecsanpedro.edu.mx','8721083999')

@@ -33,15 +33,12 @@
             this.btn_Reservar = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.btn_Inventario = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.pb1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -85,15 +82,6 @@
             this.btn_Inventario.Text = "Inventario";
             this.btn_Inventario.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(369, 289);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(62, 27);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Acceder";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // pb1
             // 
             this.pb1.BackColor = System.Drawing.Color.Transparent;
@@ -104,16 +92,6 @@
             this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 35;
             this.pb1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(369, -15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1159, 493);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -165,17 +143,15 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pb1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.btn_Inventario);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.btn_Reservar);
             this.Controls.Add(this.btn_FormSolicitar);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "MenuUsuarios";
             this.Text = "MenuUsuarios";
+            this.Load += new System.EventHandler(this.MenuUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -189,9 +165,7 @@
         private System.Windows.Forms.Button btn_Reservar;
         private System.Windows.Forms.Button btn_regresar;
         private System.Windows.Forms.Button btn_Inventario;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pb1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;

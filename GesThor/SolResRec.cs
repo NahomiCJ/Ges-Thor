@@ -26,8 +26,8 @@ namespace GesThor
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
-            frm.Show();
+            MenuUsuarios frm1 = new MenuUsuarios();
+            frm1.Show();
             this.Hide();
         }
     }
