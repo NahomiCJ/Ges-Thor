@@ -37,7 +37,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblMat = new System.Windows.Forms.Label();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@
             "Disponible",
             "En Mantenimiento",
             "Dañado"});
-            this.cbEstado.Location = new System.Drawing.Point(83, 193);
+            this.cbEstado.Location = new System.Drawing.Point(63, 198);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(200, 21);
             this.cbEstado.TabIndex = 24;
@@ -64,7 +64,7 @@
             // lblEst
             // 
             this.lblEst.AutoSize = true;
-            this.lblEst.Location = new System.Drawing.Point(80, 177);
+            this.lblEst.Location = new System.Drawing.Point(60, 182);
             this.lblEst.Name = "lblEst";
             this.lblEst.Size = new System.Drawing.Size(43, 13);
             this.lblEst.TabIndex = 23;
@@ -73,16 +73,16 @@
             // lblFech
             // 
             this.lblFech.AutoSize = true;
-            this.lblFech.Location = new System.Drawing.Point(80, 229);
+            this.lblFech.Location = new System.Drawing.Point(60, 234);
             this.lblFech.Name = "lblFech";
-            this.lblFech.Size = new System.Drawing.Size(40, 13);
+            this.lblFech.Size = new System.Drawing.Size(97, 13);
             this.lblFech.TabIndex = 22;
-            this.lblFech.Text = "Fecha:";
+            this.lblFech.Text = "Fecha Devolucion:";
             // 
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(80, 127);
+            this.lblNom.Location = new System.Drawing.Point(60, 132);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(47, 13);
             this.lblNom.TabIndex = 20;
@@ -91,7 +91,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(80, 77);
+            this.lblId.Location = new System.Drawing.Point(60, 82);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(21, 13);
             this.lblId.TabIndex = 19;
@@ -99,14 +99,14 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(83, 143);
+            this.txtNombre.Location = new System.Drawing.Point(63, 148);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 18;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(83, 93);
+            this.txtId.Location = new System.Drawing.Point(63, 98);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(200, 20);
             this.txtId.TabIndex = 17;
@@ -114,23 +114,23 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(375, 38);
+            this.lbl1.Location = new System.Drawing.Point(396, 41);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(35, 13);
             this.lbl1.TabIndex = 16;
             this.lbl1.Text = "label1";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(83, 245);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 27;
+            this.dtpFecha.Location = new System.Drawing.Point(63, 250);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 27;
             // 
             // lblMat
             // 
             this.lblMat.AutoSize = true;
-            this.lblMat.Location = new System.Drawing.Point(80, 285);
+            this.lblMat.Location = new System.Drawing.Point(60, 290);
             this.lblMat.Name = "lblMat";
             this.lblMat.Size = new System.Drawing.Size(53, 13);
             this.lblMat.TabIndex = 29;
@@ -138,7 +138,7 @@
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(83, 301);
+            this.txtMatricula.Location = new System.Drawing.Point(63, 306);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(200, 20);
             this.txtMatricula.TabIndex = 28;
@@ -155,17 +155,18 @@
             // 
             // btnSol
             // 
-            this.btnSol.Location = new System.Drawing.Point(155, 357);
+            this.btnSol.Location = new System.Drawing.Point(165, 357);
             this.btnSol.Name = "btnSol";
             this.btnSol.Size = new System.Drawing.Size(484, 23);
             this.btnSol.TabIndex = 31;
-            this.btnSol.Text = "Modificar";
+            this.btnSol.Text = "Default";
             this.btnSol.UseVisualStyleBackColor = true;
+            this.btnSol.Click += new System.EventHandler(this.btnSol_Click);
             // 
             // lblTab
             // 
             this.lblTab.AutoSize = true;
-            this.lblTab.Location = new System.Drawing.Point(336, 77);
+            this.lblTab.Location = new System.Drawing.Point(316, 82);
             this.lblTab.Name = "lblTab";
             this.lblTab.Size = new System.Drawing.Size(99, 13);
             this.lblTab.TabIndex = 33;
@@ -183,16 +184,20 @@
             // 
             // dgvInv
             // 
+            this.dgvInv.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInv.Location = new System.Drawing.Point(339, 93);
+            this.dgvInv.Location = new System.Drawing.Point(319, 98);
+            this.dgvInv.MultiSelect = false;
             this.dgvInv.Name = "dgvInv";
             this.dgvInv.Size = new System.Drawing.Size(405, 228);
             this.dgvInv.TabIndex = 35;
+            this.dgvInv.SelectionChanged += new System.EventHandler(this.dgvInv_SelectionChanged);
             // 
             // SolResRec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvInv);
             this.Controls.Add(this.pb1);
@@ -201,7 +206,7 @@
             this.Controls.Add(this.btnSol);
             this.Controls.Add(this.lblMat);
             this.Controls.Add(this.txtMatricula);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.lblEst);
             this.Controls.Add(this.lblFech);
@@ -229,7 +234,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblMat;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.Button btnBack;

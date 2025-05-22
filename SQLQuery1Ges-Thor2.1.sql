@@ -68,6 +68,9 @@ CREATE TABLE Prestamo (
 );
 
 
+select * from Prestamo	
+
+select * from Usuario
 
 select * from Equipo  
 select * from Administrador
@@ -79,7 +82,7 @@ WHERE Id_Equipo =1
 
 select * from Equipo where Estado_Equipo = 'Disponible'
 
-select * from Administrador
+select * from Administrador 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -155,5 +158,45 @@ BEGIN
 		ROLLBACK TRAN
 	END CATCH
 END;
+
+
+
+USE GesThor
+
+CREATE OR ALTER PROCEDURE spiAgPrestamo
+    @Id_U INT,
+    @Id_E INT,
+    @Fecha_Dev DATETIME,
+    @Status_Prestamo VARCHAR(50),
+	@Fecha_DevReal DATETIME = NULL -- Parámetro opcional
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Prestamo (
+        Id_Usuario,
+        Id_Equipo,
+        Fecha_Devolucion,
+		Fecha_DevolucionReal,
+        Status_Prestamo
+    )
+    VALUES (
+        @Id_U,
+        @Id_E,
+        @Fecha_Dev,
+		@Fecha_DevReal,
+        @Status_Prestamo
+    );
+END;
+
+CREATE OR ALTER PROCEDURE sprConsultarIdUsuario
+@Matricula VARCHAR (20)
+AS
+BEGIN
+	SELECT 
+	Id_Usuario
+    FROM Usuario WITH(nolock)
+	WHERE Matricula_Clave = @Matricula
+END
 
 
