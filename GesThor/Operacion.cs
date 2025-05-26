@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 using System.Diagnostics.Contracts;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace GesThor
 {
     class Operacion
     {
-        string conexion = "Data Source = DESKTOP-TE3EHHL\\SQLEXPRESS; Initial Catalog = GesThor; integrated security = true;";
+        private string conexion = "Data Source = localhost\\SQLEXPRESS;Initial Catalog = GesThor;Integrated Security=True;";
 
         #region Visualizar
+
         public DataTable Cargar()
         {
             DataTable dt = new DataTable();
@@ -88,26 +90,25 @@ namespace GesThor
             }
         }
 
-        public string AgregarPrestamo(int Id_U, int Id_E, DateTime Dev, string Status, DateTime DevR)
+        public string AgregarPrestamo(int Id_U, int Id_E, DateTime Dev, string Status)
         {
             try
             {
                 SqlConnection con = new SqlConnection(conexion);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("spi_AgPrestamo", con);
+                SqlCommand cmd = new SqlCommand("spiAgPrestamo", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@Id_U", Id_U);
                 cmd.Parameters.AddWithValue("@Id_E", Id_E);
                 cmd.Parameters.AddWithValue("@Fecha_Dev", Dev);
                 cmd.Parameters.AddWithValue("@Status_Prestamo", Status);
-                cmd.Parameters.AddWithValue("@Fecha_DevReal", DevR);
 
                 cmd.ExecuteNonQuery();
 
                 con.Close();
 
-                return "Agregado";
+                return null;
             }
             catch (Exception ex)
             {
@@ -115,30 +116,84 @@ namespace GesThor
             }
         }
 
-        public int ConsultaUsuario(string Mat)
+        public string ConsultaUsuario(string Mat)
         {
             try
             {
-                int Id = 0;
-                SqlConnection con = new SqlConnection(conexion);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("sprConsultarIdUsuario", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Matricula", Mat);
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlConnection con = new SqlConnection(conexion))
                 {
-                    if (reader.Read())
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("sprConsultarIdUsuario", con))
                     {
-                        Id = Convert.ToInt32(reader["Id_Usuario"]); // Asegúrate de que este sea el nombre correcto de la columna
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Matricula", Mat);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                return reader["Id_Usuario"].ToString(); // Retorna el ID como string
+                            }
+                        }
                     }
                 }
 
-                return Id;
+                return null; // Si no se encuentra el usuario
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return 0;
+                return null;
+            }
+        }
+
+        public DataTable BuscarPrestamosPorMatricula(string mat)
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                try
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("ObtenerPrestamosPorMatricula", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;  //Llamado del StoredProcedure 
+
+
+                    cmd.Parameters.AddWithValue("@Matricula", mat); //Parametro de Matricula o Clave
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();  //Adaptacion de la tabla en el DataGridView
+                    da.Fill(dt);
+
+                    return dt;
+                }
+                catch (Exception)
+                {
+                    return null;
+                    //MessageBox.Show("Error al cargar los préstamos: " + ex.Message);
+                }
+            }
+        }
+
+        public DataTable BuscarPrestamos()
+        {
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                try
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("select * from Prestamo;", conn);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable(); 
+                    da.Fill(dt);
+
+                    return dt;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             }
         }
     }

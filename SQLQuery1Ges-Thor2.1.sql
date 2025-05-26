@@ -122,7 +122,7 @@ BEGIN
   VALUES (@Nombre, @Cantidad, @Estado, @Disponibilidad);
 END;
 
-DROP spi_AgEquipo
+
 
 
 	
@@ -161,6 +161,7 @@ END;
 
 
 
+
 USE GesThor
 
 CREATE OR ALTER PROCEDURE spiAgPrestamo
@@ -173,21 +174,28 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
+    -- Insertar el préstamo
     INSERT INTO Prestamo (
         Id_Usuario,
         Id_Equipo,
         Fecha_Devolucion,
-		Fecha_DevolucionReal,
+        Fecha_DevolucionReal,
         Status_Prestamo
     )
     VALUES (
         @Id_U,
         @Id_E,
         @Fecha_Dev,
-		@Fecha_DevReal,
+        @Fecha_DevReal,
         @Status_Prestamo
     );
+
+    -- Actualizar la disponibilidad del equipo
+    UPDATE Equipo
+    SET Disponibilidad_Equipo = 0
+    WHERE Id_Equipo = @Id_E;
 END;
+
 
 CREATE OR ALTER PROCEDURE sprConsultarIdUsuario
 @Matricula VARCHAR (20)
@@ -198,5 +206,33 @@ BEGIN
     FROM Usuario WITH(nolock)
 	WHERE Matricula_Clave = @Matricula
 END
+exec sprConsultarIdUsuario '221000101'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+select * from Prestamo;
+
+CREATE OR ALTER PROCEDURE ObtenerPrestamosPorMatricula
+    @Matricula NVARCHAR(50) = NULL
+AS
+BEGIN
+    SELECT 
+        P.Id_Prestamo,
+        U.Matricula_Clave,
+        P.Fecha_Prestamo,
+        P.Fecha_Devolucion,
+        P.Fecha_DevolucionReal,
+        P.Status_Prestamo
+    FROM Prestamo P
+    INNER JOIN Usuario U ON P.Id_Usuario = U.Id_Usuario
+    INNER JOIN Equipo E ON P.Id_Equipo = E.Id_Equipo
+    WHERE U.Matricula_Clave = @Matricula;
+END;
 
 
+select * from Usuario
+
+
+
+Insert into Usuario (Matricula_Clave,Carrera_Usuario,Correo_Usuario,Telefono_Usuario) values ('221000139','ISIC','SaulHR24@hotmail.com','872161466'),
+('221000101','ISIC','lynda.castillo.22isc@tecsanpedro.edu.mx','8721083999')
+>>>>>>> 9ab9c7e357b802291215d22a75ddd3d1ce91764c

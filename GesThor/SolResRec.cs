@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace GesThor
 {
-    public partial class SolResRec: Form
+    public partial class SolResRec : Form
     {
         Operacion op = new Operacion();
-        public string modo_; 
+        public string modo_;
         public SolResRec(string modo)
         {
             InitializeComponent();
@@ -37,14 +37,14 @@ namespace GesThor
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
-            frm.Show();
+            MenuUsuarios frm1 = new MenuUsuarios();
+            frm1.Show();
             this.Hide();
         }
 
         private void dgvInv_SelectionChanged(object sender, EventArgs e)
         {
-            string temp;
+            //string temp;
             if (dgvInv.SelectedRows.Count > 0)
             {
                 DataGridViewRow select = dgvInv.SelectedRows[0];
@@ -56,7 +56,7 @@ namespace GesThor
                     cbEstado.Text = select.Cells[3].Value.ToString();
                     //temp = select.Cells[3].Value.ToString();
                     //dtpFecha.Value = Convert.ToDateTime(temp);
-                    
+
                 }
 
             }
@@ -64,15 +64,14 @@ namespace GesThor
 
         private void btnSol_Click(object sender, EventArgs e)
         {
-            int idusu = op.ConsultaUsuario(txtMatricula.Text);
-            DateTime dev = new DateTime();
-            string resultado;
-            resultado = op.AgregarPrestamo(idusu, Convert.ToInt32(txtId),dtpFecha.Value,"Activo", dev);
-            if (!string.IsNullOrEmpty(resultado))
+            string idusu = op.ConsultaUsuario(txtMatricula.Text);
+            string resultado, status = "Activo";
+            resultado = op.AgregarPrestamo(Convert.ToInt32(idusu), Convert.ToInt32(txtId.Text), dtpFecha.Value, status);
+            if (string.IsNullOrEmpty(resultado))
             {
                 MessageBox.Show("El registro se he agregado correctamente");
                 this.Close();
-                Form1 frm = new Form1();
+                MenuUsuarios frm = new MenuUsuarios();
                 frm.Show();
             }
             //switch (modo_)
@@ -86,4 +85,5 @@ namespace GesThor
             //}
         }
     }
+
 }
