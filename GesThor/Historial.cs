@@ -57,7 +57,7 @@ namespace GesThor
 
         private void txt_clave_TextChanged(object sender, EventArgs e)
         {
-
+            dgv_Historial.DataSource = op.BuscarPrestamosPorMatricula(txt_clave.Text);
         }
 
         private void Historial_FormClosed(object sender, FormClosedEventArgs e)

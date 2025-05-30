@@ -225,7 +225,7 @@ BEGIN
     FROM Prestamo P
     INNER JOIN Usuario U ON P.Id_Usuario = U.Id_Usuario
     INNER JOIN Equipo E ON P.Id_Equipo = E.Id_Equipo
-    WHERE U.Matricula_Clave = @Matricula;
+    WHERE U.Matricula_Clave LIKE '%'+ @Matricula +'%';
 END;
 
 

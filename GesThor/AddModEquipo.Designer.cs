@@ -40,7 +40,6 @@
             this.lblCan = new System.Windows.Forms.Label();
             this.lblEst = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
-            this.lblDis = new System.Windows.Forms.Label();
             this.chbDisponibilidad = new System.Windows.Forms.CheckBox();
             this.pb1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
@@ -50,117 +49,135 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(369, 38);
+            this.lbl1.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(359, 38);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(35, 13);
+            this.lbl1.Size = new System.Drawing.Size(69, 27);
             this.lbl1.TabIndex = 0;
             this.lbl1.Text = "label1";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(218, 116);
+            this.txtId.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(182, 113);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.Size = new System.Drawing.Size(179, 23);
             this.txtId.TabIndex = 1;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(465, 116);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(429, 113);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(179, 23);
             this.txtNombre.TabIndex = 2;
             // 
             // btnMod
             // 
-            this.btnMod.Location = new System.Drawing.Point(218, 364);
+            this.btnMod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(133)))), ((int)(((byte)(166)))));
+            this.btnMod.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(133)))), ((int)(((byte)(166)))));
+            this.btnMod.FlatAppearance.BorderSize = 0;
+            this.btnMod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(133)))), ((int)(((byte)(166)))));
+            this.btnMod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(133)))), ((int)(((byte)(166)))));
+            this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMod.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMod.Location = new System.Drawing.Point(224, 358);
             this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(347, 23);
+            this.btnMod.Size = new System.Drawing.Size(347, 28);
             this.btnMod.TabIndex = 6;
             this.btnMod.Text = "Modificar";
-            this.btnMod.UseVisualStyleBackColor = true;
+            this.btnMod.UseVisualStyleBackColor = false;
             this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(24, 406);
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(24, 398);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(96, 23);
+            this.btnBack.Size = new System.Drawing.Size(120, 31);
             this.btnBack.TabIndex = 7;
-            this.btnBack.Text = "Volver al menu";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Text = "Volver al menú";
+            this.btnBack.UseVisualStyleBackColor = false;
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(215, 86);
+            this.lblId.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(179, 97);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(21, 13);
+            this.lblId.Size = new System.Drawing.Size(21, 16);
             this.lblId.TabIndex = 8;
             this.lblId.Text = "ID:";
             // 
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(462, 86);
+            this.lblNom.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNom.Location = new System.Drawing.Point(426, 97);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(47, 13);
+            this.lblNom.Size = new System.Drawing.Size(53, 16);
             this.lblNom.TabIndex = 9;
             this.lblNom.Text = "Nombre:";
             // 
             // numCantidad
             // 
-            this.numCantidad.Location = new System.Drawing.Point(218, 231);
+            this.numCantidad.Enabled = false;
+            this.numCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numCantidad.Location = new System.Drawing.Point(182, 228);
             this.numCantidad.Name = "numCantidad";
-            this.numCantidad.Size = new System.Drawing.Size(100, 20);
+            this.numCantidad.Size = new System.Drawing.Size(179, 23);
             this.numCantidad.TabIndex = 10;
+            this.numCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblCan
             // 
             this.lblCan.AutoSize = true;
-            this.lblCan.Location = new System.Drawing.Point(215, 202);
+            this.lblCan.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCan.Location = new System.Drawing.Point(179, 212);
             this.lblCan.Name = "lblCan";
-            this.lblCan.Size = new System.Drawing.Size(52, 13);
+            this.lblCan.Size = new System.Drawing.Size(57, 16);
             this.lblCan.TabIndex = 11;
             this.lblCan.Text = "Cantidad:";
             // 
             // lblEst
             // 
             this.lblEst.AutoSize = true;
-            this.lblEst.Location = new System.Drawing.Point(462, 202);
+            this.lblEst.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEst.Location = new System.Drawing.Point(426, 212);
             this.lblEst.Name = "lblEst";
-            this.lblEst.Size = new System.Drawing.Size(43, 13);
+            this.lblEst.Size = new System.Drawing.Size(51, 17);
             this.lblEst.TabIndex = 12;
             this.lblEst.Text = "Estado:";
             // 
             // cbEstado
             // 
+            this.cbEstado.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Items.AddRange(new object[] {
             "Disponible",
             "En Mantenimiento",
             "Dañado"});
-            this.cbEstado.Location = new System.Drawing.Point(465, 230);
+            this.cbEstado.Location = new System.Drawing.Point(429, 227);
             this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(100, 21);
+            this.cbEstado.Size = new System.Drawing.Size(179, 25);
             this.cbEstado.TabIndex = 13;
-            // 
-            // lblDis
-            // 
-            this.lblDis.AutoSize = true;
-            this.lblDis.Location = new System.Drawing.Point(340, 284);
-            this.lblDis.Name = "lblDis";
-            this.lblDis.Size = new System.Drawing.Size(75, 13);
-            this.lblDis.TabIndex = 14;
-            this.lblDis.Text = "Disponibilidad:";
             // 
             // chbDisponibilidad
             // 
             this.chbDisponibilidad.AutoSize = true;
-            this.chbDisponibilidad.Location = new System.Drawing.Point(343, 311);
+            this.chbDisponibilidad.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbDisponibilidad.Location = new System.Drawing.Point(349, 295);
             this.chbDisponibilidad.Name = "chbDisponibilidad";
-            this.chbDisponibilidad.Size = new System.Drawing.Size(80, 17);
+            this.chbDisponibilidad.Size = new System.Drawing.Size(102, 20);
             this.chbDisponibilidad.TabIndex = 15;
-            this.chbDisponibilidad.Text = "checkBox1";
+            this.chbDisponibilidad.Text = "Disponibilidad";
             this.chbDisponibilidad.UseVisualStyleBackColor = true;
             // 
             // pb1
@@ -181,7 +198,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pb1);
             this.Controls.Add(this.chbDisponibilidad);
-            this.Controls.Add(this.lblDis);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.lblEst);
             this.Controls.Add(this.lblCan);
@@ -216,7 +232,6 @@
         private System.Windows.Forms.Label lblCan;
         private System.Windows.Forms.Label lblEst;
         private System.Windows.Forms.ComboBox cbEstado;
-        private System.Windows.Forms.Label lblDis;
         private System.Windows.Forms.CheckBox chbDisponibilidad;
         private System.Windows.Forms.PictureBox pb1;
     }
