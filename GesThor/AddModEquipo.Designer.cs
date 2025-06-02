@@ -42,6 +42,10 @@
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.chbDisponibilidad = new System.Windows.Forms.CheckBox();
             this.pb1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.SuspendLayout();
@@ -79,11 +83,11 @@
             this.btnMod.FlatAppearance.BorderSize = 0;
             this.btnMod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(133)))), ((int)(((byte)(166)))));
             this.btnMod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(133)))), ((int)(((byte)(166)))));
-            this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMod.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMod.Location = new System.Drawing.Point(224, 358);
+            this.btnMod.Location = new System.Drawing.Point(182, 358);
             this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(347, 28);
+            this.btnMod.Size = new System.Drawing.Size(426, 28);
             this.btnMod.TabIndex = 6;
             this.btnMod.Text = "Modificar";
             this.btnMod.UseVisualStyleBackColor = false;
@@ -92,7 +96,7 @@
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Location = new System.Drawing.Point(24, 398);
@@ -173,7 +177,7 @@
             // 
             this.chbDisponibilidad.AutoSize = true;
             this.chbDisponibilidad.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbDisponibilidad.Location = new System.Drawing.Point(349, 295);
+            this.chbDisponibilidad.Location = new System.Drawing.Point(340, 299);
             this.chbDisponibilidad.Name = "chbDisponibilidad";
             this.chbDisponibilidad.Size = new System.Drawing.Size(102, 20);
             this.chbDisponibilidad.TabIndex = 15;
@@ -189,6 +193,50 @@
             this.pb1.Size = new System.Drawing.Size(138, 147);
             this.pb1.TabIndex = 16;
             this.pb1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkRed;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(179, 116);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 23);
+            this.textBox1.TabIndex = 45;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.DarkRed;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(426, 116);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(179, 23);
+            this.textBox2.TabIndex = 46;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.DarkRed;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(179, 231);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(179, 23);
+            this.textBox3.TabIndex = 47;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.DarkRed;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(426, 232);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(179, 23);
+            this.textBox4.TabIndex = 48;
             // 
             // AddModEquipo
             // 
@@ -209,6 +257,10 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox4);
             this.Name = "AddModEquipo";
             this.Text = "AddModEquipo";
             this.Load += new System.EventHandler(this.AddModEquipo_Load);
@@ -234,5 +286,9 @@
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.CheckBox chbDisponibilidad;
         private System.Windows.Forms.PictureBox pb1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

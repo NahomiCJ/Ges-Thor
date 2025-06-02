@@ -67,6 +67,20 @@ CREATE TABLE Prestamo (
   CONSTRAINT FK_Prestamo_Equipo FOREIGN KEY (Id_Equipo) REFERENCES Equipo(Id_Equipo)
 );
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------Este es el script para modificar la tabla de prestamo
+DECLARE @SQL NVARCHAR(MAX)
+SELECT @SQL = 'ALTER TABLE Prestamo DROP CONSTRAINT ' + d.name
+FROM sys.default_constraints d
+JOIN sys.columns c ON d.parent_object_id = c.object_id AND d.parent_column_id = c.column_id
+WHERE OBJECT_NAME(d.parent_object_id) = 'Prestamo' AND c.name = 'Fecha_Prestamo'
+
+EXEC sp_executesql @SQL;
+
+-- Ahora modificamos la columna para que ya no tenga valor por defecto
+ALTER TABLE Prestamo
+ALTER COLUMN Fecha_Prestamo DATETIME NOT NULL;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 select * from Prestamo	
 
@@ -167,9 +181,10 @@ USE GesThor
 CREATE OR ALTER PROCEDURE spiAgPrestamo
     @Id_U INT,
     @Id_E INT,
+    @Fecha_Prestamo DATETIME,
     @Fecha_Dev DATETIME,
     @Status_Prestamo VARCHAR(50),
-	@Fecha_DevReal DATETIME = NULL -- Parámetro opcional
+    @Fecha_DevReal DATETIME = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -178,6 +193,7 @@ BEGIN
     INSERT INTO Prestamo (
         Id_Usuario,
         Id_Equipo,
+        Fecha_Prestamo,
         Fecha_Devolucion,
         Fecha_DevolucionReal,
         Status_Prestamo
@@ -185,6 +201,7 @@ BEGIN
     VALUES (
         @Id_U,
         @Id_E,
+        @Fecha_Prestamo,
         @Fecha_Dev,
         @Fecha_DevReal,
         @Status_Prestamo
@@ -230,9 +247,124 @@ END;
 
 
 select * from Usuario
-
+select * from Prestamo
+select * from Administrador
+select * from Equipo
 
 
 Insert into Usuario (Matricula_Clave,Carrera_Usuario,Correo_Usuario,Telefono_Usuario) values ('221000139','ISIC','SaulHR24@hotmail.com','872161466'),
 ('221000101','ISIC','lynda.castillo.22isc@tecsanpedro.edu.mx','8721083999')
 >>>>>>> 9ab9c7e357b802291215d22a75ddd3d1ce91764c
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR ALTER PROCEDURE sprConsultarUsuarioExist
+    @Matricula VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM Usuario
+        WHERE Matricula_Clave = @Matricula
+    )
+    BEGIN
+        SELECT 1 AS Existe; -- El usuario existe
+    END
+    ELSE
+    BEGIN
+        SELECT 0 AS Existe; -- El usuario no existe
+    END
+END;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE spiAgUsuario
+    @Matri VARCHAR(20),
+    @Carrera VARCHAR(50),
+    @Correo VARCHAR(100),
+    @Tel VARCHAR(15)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Validar que no exista la matrícula ni el correo
+    IF EXISTS (SELECT 1 FROM Usuario WHERE Matricula_Clave = @Matri)
+    BEGIN
+        RAISERROR('La matrícula ya existe.', 16, 1);
+        RETURN;
+    END
+
+    IF EXISTS (SELECT 1 FROM Usuario WHERE Correo_Usuario = @Correo)
+    BEGIN
+        RAISERROR('El correo ya existe.', 16, 1);
+        RETURN;
+    END
+
+    -- Insertar nuevo usuario
+    INSERT INTO Usuario (
+        Matricula_Clave,
+        Carrera_Usuario,
+        Correo_Usuario,
+        Telefono_Usuario
+    )
+    VALUES (
+        @Matri,
+        @Carrera,
+        @Correo,
+        @Tel
+    );
+END;
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE sprVerPrestamosActORet
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        P.Id_Prestamo,
+        U.Matricula_Clave,
+        U.Carrera_Usuario,
+        U.Correo_Usuario,
+        E.Nombre_Equipo,
+        P.Fecha_Prestamo,
+        P.Fecha_Devolucion,
+        P.Fecha_DevolucionReal,
+        P.Status_Prestamo
+    FROM Prestamo P
+    INNER JOIN Usuario U ON P.Id_Usuario = U.Id_Usuario
+    INNER JOIN Equipo E ON P.Id_Equipo = E.Id_Equipo
+    WHERE P.Status_Prestamo IN ('Activo', 'Retrasado')
+    ORDER BY P.Fecha_Prestamo DESC;
+END;
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE spuUpPrestamo
+    @Id_Prestamo INT,
+    @NuevaFechaDevReal DATETIME,
+    @NuevoStatus VARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @IdEquipo INT;
+
+    -- Obtener Id del equipo relacionado
+    SELECT @IdEquipo = Id_Equipo FROM Prestamo WHERE Id_Prestamo = @Id_Prestamo;
+
+    -- Actualizar préstamo
+    UPDATE Prestamo
+    SET Fecha_DevolucionReal = @NuevaFechaDevReal,
+        Status_Prestamo = @NuevoStatus
+    WHERE Id_Prestamo = @Id_Prestamo;
+
+    -- Si el préstamo ya fue devuelto, marcamos el equipo como disponible (1)
+    IF @NuevoStatus = 'Devuelto'
+    BEGIN
+        UPDATE Equipo
+        SET Disponibilidad_Equipo = 1
+        WHERE Id_Equipo = @IdEquipo;
+    END;
+END;
+
+

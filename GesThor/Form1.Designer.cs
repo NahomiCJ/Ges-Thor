@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
@@ -44,8 +44,9 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(352, 49);
+            this.lbl1.Location = new System.Drawing.Point(347, 43);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(108, 27);
             this.lbl1.TabIndex = 1;
@@ -83,7 +84,7 @@
             // 
             this.pb1.BackColor = System.Drawing.Color.Transparent;
             this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
-            this.pb1.Location = new System.Drawing.Point(682, -21);
+            this.pb1.Location = new System.Drawing.Point(672, -19);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(138, 147);
             this.pb1.TabIndex = 4;
@@ -95,7 +96,7 @@
             this.btnAg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAg.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAg.ForeColor = System.Drawing.Color.White;
-            this.btnAg.Location = new System.Drawing.Point(357, 405);
+            this.btnAg.Location = new System.Drawing.Point(352, 408);
             this.btnAg.Name = "btnAg";
             this.btnAg.Size = new System.Drawing.Size(120, 30);
             this.btnAg.TabIndex = 5;
@@ -107,19 +108,19 @@
             // 
             this.dgvInventario.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventario.GridColor = System.Drawing.Color.White;
             this.dgvInventario.Location = new System.Drawing.Point(142, 109);
             this.dgvInventario.Name = "dgvInventario";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray;
-            this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray;
+            this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInventario.Size = new System.Drawing.Size(546, 268);
             this.dgvInventario.TabIndex = 6;
             // 

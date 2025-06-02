@@ -40,3 +40,5 @@ C:\Users\SaulC\source\repos\Ges-Thor\GesThor\obj\Debug\GesThor.exe
 C:\Users\SaulC\source\repos\Ges-Thor\GesThor\obj\Debug\GesThor.pdb
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Historial.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.MenuUsuarios.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Registro.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Devolucion.resources

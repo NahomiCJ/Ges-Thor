@@ -27,7 +27,7 @@ namespace GesThor
         private void btn_regresar_Click(object sender, EventArgs e)
         {
 
-            Application.Exit(); //Cerrar Aplicacion 
+            Application.Exit(); //Cerrar Aplicacion (provicional mentras no tengamos un login)
         }
 
         private void MenuUsuarios_Load(object sender, EventArgs e)
@@ -45,14 +45,21 @@ namespace GesThor
         private void btn_Inventario_Click(object sender, EventArgs e)
         {
             Form1 frm = new Form1();
-            frm.Show();   //Crear un nuevo formulario SolResRec desde el boton del MenuUsuarios
+            frm.Show();   //Crear un nuevo formulario Inventario desde el boton del MenuUsuarios
             this.Hide();
         }
 
         private void pb1_Click(object sender, EventArgs e)
         {
             Historial frm = new Historial();
-            frm.Show();   //Crear un nuevo formulario SolResRec desde el boton del MenuUsuarios
+            frm.Show();   //Crear un nuevo formulario Historial desde el boton del MenuUsuarios
+            this.Hide();
+        }
+
+        private void btnDev_Click(object sender, EventArgs e)
+        {
+            Devolucion frm = new Devolucion();
+            frm.Show();   //Crear un nuevo formulario Devolucion desde el boton del MenuUsuarios
             this.Hide();
         }
     }
