@@ -229,11 +229,14 @@
             // 
             // dgvInv
             // 
+            this.dgvInv.AllowUserToAddRows = false;
+            this.dgvInv.AllowUserToDeleteRows = false;
             this.dgvInv.BackgroundColor = System.Drawing.Color.White;
             this.dgvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInv.Location = new System.Drawing.Point(301, 97);
             this.dgvInv.MultiSelect = false;
             this.dgvInv.Name = "dgvInv";
+            this.dgvInv.ReadOnly = true;
             this.dgvInv.Size = new System.Drawing.Size(470, 274);
             this.dgvInv.TabIndex = 35;
             this.dgvInv.SelectionChanged += new System.EventHandler(this.dgvInv_SelectionChanged);

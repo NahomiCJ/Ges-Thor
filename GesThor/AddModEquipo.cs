@@ -12,15 +12,16 @@ namespace GesThor
 {
     public partial class AddModEquipo: Form
     {
-        Operacion op = new Operacion();
-        public string modo_;
+        Operacion op = new Operacion(); //Instancia de la clase Operacion que se encargará de ejecutar las operaciones en la base de datos
+        public string modo_; //indica si el formulario se abrió en modo Agregar o Modificar.
+        //Popiedades que representan los datos del equipo (utilizados en modo modificación).
         public int Id { get; set; }
         public string Nombre { get; set; }
         public int Cantidad { get; set; }
         public string Estado { get; set; }
         public bool Disponibilidad { get; set; }
 
-        public AddModEquipo(string modo)
+        public AddModEquipo(string modo) //Recibe el modo de operación "Agregar" o "Modificar", y lo guarda en la variable "modo_"
         {
             InitializeComponent();
             modo_ = modo;
@@ -29,16 +30,16 @@ namespace GesThor
 
         private void AddModEquipo_Load(object sender, EventArgs e)
         {
-            txtId.Text = Id.ToString();
-            txtNombre.Text = Nombre;
-            numCantidad.Value = Cantidad;
-            cbEstado.Text = Estado;
-            chbDisponibilidad.Checked = Disponibilidad;
 
             if (modo_ == "Modificar")
             {
                 lbl1.Text = modo_;
                 txtId.Enabled = false;
+                txtId.Text = Id.ToString();
+                txtNombre.Text = Nombre;
+                numCantidad.Value = Cantidad;
+                cbEstado.Text = Estado;
+                chbDisponibilidad.Checked = Disponibilidad;
             }
             else
             {
@@ -53,31 +54,52 @@ namespace GesThor
         private void btnMod_Click(object sender, EventArgs e)
         {
             string resultado;
-            switch (modo_)
+            if (Validar())
             {
-                case "Agregar":
-                    resultado = op.AgregarEquipo(txtNombre.Text, (int)numCantidad.Value, cbEstado.Text, chbDisponibilidad.Checked);
-                    if (!string.IsNullOrEmpty(resultado))
-                    {
-                        MessageBox.Show("El registro se he agregado correctamente");
-                        this.Close();
-                        Form1 frm = new Form1();
-                        frm.Show();
-                    }
-                    break;
-                case "Modificar":
-                    resultado = op.ModificarEquipo(Id, txtNombre.Text, (int)numCantidad.Value, cbEstado.Text, chbDisponibilidad.Checked);
-                    if (!string.IsNullOrEmpty(resultado))
-                    {
-                        MessageBox.Show("El registro se he actualizado correctamente");
-                        this.Close();
-                        Form1 frm = new Form1();
-                        frm.Show();
-                    }
-                    break;
+                switch (modo_) //Evaluar el modo del formulario
+                {
+                    case "Agregar":
+                        resultado = op.AgregarEquipo(txtNombre.Text, (int)numCantidad.Value, cbEstado.Text, chbDisponibilidad.Checked);
+                        if (!string.IsNullOrEmpty(resultado))
+                        {
+                            MessageBox.Show("El registro se he agregado correctamente");
+                            this.Close();
+                            Form1 frm = new Form1();
+                            frm.Show();
+                        }
+                        break;
+                    case "Modificar":
+                        resultado = op.ModificarEquipo(Id, txtNombre.Text, (int)numCantidad.Value, cbEstado.Text, chbDisponibilidad.Checked);
+                        if (!string.IsNullOrEmpty(resultado))
+                        {
+                            MessageBox.Show("El registro se he actualizado correctamente");
+                            this.Close();
+                            Form1 frm = new Form1();
+                            frm.Show();
+                        }
+                        break;
 
-                default:
-                    break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Introduzca un valor aceptable");
+                cbEstado.Text = "";
+            }
+            
+        }
+
+        public bool Validar()
+        {
+            if (cbEstado.Text == "Disponible" || cbEstado.Text == "En Mantenimiento" || cbEstado.Text == "Dañado")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

@@ -13,10 +13,11 @@ namespace GesThor
 {
     public partial class Historial : Form
     {
-        Operacion op = new Operacion();
+        Operacion op = new Operacion(); // Instancia de la clase que contiene operaciones con la base de datos
         public Historial()
         {
             InitializeComponent();
+            // Al cargar el formulario, se llenan los datos del DataGridView con todos los préstamos registrados
             dgv_Historial.DataSource = op.BuscarPrestamos();
             //dgv_Historial.DataSource = op.BuscarPrestamosPorMatricula(null);
             
@@ -55,6 +56,8 @@ namespace GesThor
 
         }
 
+        // Evento que se ejecuta cuando cambia el texto del campo de matrícula
+        // Filtra el historial por la matrícula ingresada
         private void txt_clave_TextChanged(object sender, EventArgs e)
         {
             dgv_Historial.DataSource = op.BuscarPrestamosPorMatricula(txt_clave.Text);
@@ -63,10 +66,15 @@ namespace GesThor
         private void Historial_FormClosed(object sender, FormClosedEventArgs e)
         {
             MenuUsuarios frm = new MenuUsuarios();
-            frm.Show();
+            frm.Show(); // Regresa al menú principal al cerrar el historial
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Historial_Load(object sender, EventArgs e)
         {
 
         }

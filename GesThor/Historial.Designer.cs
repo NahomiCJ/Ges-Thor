@@ -40,9 +40,12 @@
             // 
             // dgv_Historial
             // 
+            this.dgv_Historial.AllowUserToAddRows = false;
+            this.dgv_Historial.AllowUserToDeleteRows = false;
             this.dgv_Historial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Historial.Location = new System.Drawing.Point(304, 0);
             this.dgv_Historial.Name = "dgv_Historial";
+            this.dgv_Historial.ReadOnly = true;
             this.dgv_Historial.Size = new System.Drawing.Size(498, 452);
             this.dgv_Historial.TabIndex = 0;
             this.dgv_Historial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Historial_CellContentClick);
@@ -118,6 +121,7 @@
             this.Name = "Historial";
             this.Text = "Historial";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Historial_FormClosed);
+            this.Load += new System.EventHandler(this.Historial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Historial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

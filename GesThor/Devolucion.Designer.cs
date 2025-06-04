@@ -35,7 +35,6 @@
             this.lblMat = new System.Windows.Forms.Label();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.lblEst = new System.Windows.Forms.Label();
             this.lblFech = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
@@ -45,11 +44,12 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSol = new System.Windows.Forms.Button();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,7 @@
             this.dgvInv.Name = "dgvInv";
             this.dgvInv.Size = new System.Drawing.Size(470, 243);
             this.dgvInv.TabIndex = 66;
+            this.dgvInv.SelectionChanged += new System.EventHandler(this.dgvInv_SelectionChanged);
             // 
             // pb1
             // 
@@ -89,7 +90,7 @@
             this.lblMat.AutoSize = true;
             this.lblMat.BackColor = System.Drawing.Color.Transparent;
             this.lblMat.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMat.Location = new System.Drawing.Point(45, 196);
+            this.lblMat.Location = new System.Drawing.Point(46, 203);
             this.lblMat.Name = "lblMat";
             this.lblMat.Size = new System.Drawing.Size(60, 16);
             this.lblMat.TabIndex = 63;
@@ -98,31 +99,19 @@
             // txtMatricula
             // 
             this.txtMatricula.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatricula.Location = new System.Drawing.Point(49, 212);
+            this.txtMatricula.Location = new System.Drawing.Point(50, 219);
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(200, 23);
             this.txtMatricula.TabIndex = 52;
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Location = new System.Drawing.Point(49, 304);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 23);
             this.dtpFecha.TabIndex = 54;
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Items.AddRange(new object[] {
-            "Disponible",
-            "En Mantenimiento",
-            "Dañado"});
-            this.cbEstado.Location = new System.Drawing.Point(49, 165);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(200, 25);
-            this.cbEstado.TabIndex = 62;
             // 
             // lblEst
             // 
@@ -189,11 +178,11 @@
             this.lbl1.AutoSize = true;
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(346, 19);
+            this.lbl1.Location = new System.Drawing.Point(335, 20);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(69, 27);
+            this.lbl1.Size = new System.Drawing.Size(139, 27);
             this.lbl1.TabIndex = 55;
-            this.lbl1.Text = "label1";
+            this.lbl1.Text = "Devoluciones";
             // 
             // textBox1
             // 
@@ -217,17 +206,6 @@
             this.textBox2.Size = new System.Drawing.Size(200, 23);
             this.textBox2.TabIndex = 69;
             // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.DarkRed;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(46, 170);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 23);
-            this.textBox3.TabIndex = 70;
-            // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.DarkRed;
@@ -244,7 +222,7 @@
             this.textBox5.BackColor = System.Drawing.Color.DarkRed;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(46, 215);
+            this.textBox5.Location = new System.Drawing.Point(47, 222);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(200, 23);
@@ -277,8 +255,28 @@
             this.btnSol.Name = "btnSol";
             this.btnSol.Size = new System.Drawing.Size(484, 25);
             this.btnSol.TabIndex = 74;
-            this.btnSol.Text = "Default";
+            this.btnSol.Text = "Registrar Devolución";
             this.btnSol.UseVisualStyleBackColor = false;
+            this.btnSol.Click += new System.EventHandler(this.btnSol_Click);
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(49, 168);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(200, 23);
+            this.txtEstado.TabIndex = 76;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.DarkRed;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(46, 171);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(200, 23);
+            this.textBox6.TabIndex = 77;
             // 
             // Devolucion
             // 
@@ -286,6 +284,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSol);
             this.Controls.Add(this.dgvInv);
@@ -294,7 +294,6 @@
             this.Controls.Add(this.lblMat);
             this.Controls.Add(this.txtMatricula);
             this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.lblEst);
             this.Controls.Add(this.lblFech);
             this.Controls.Add(this.lblNom);
@@ -304,7 +303,6 @@
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox5);
             this.Name = "Devolucion";
@@ -324,7 +322,6 @@
         private System.Windows.Forms.Label lblMat;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label lblEst;
         private System.Windows.Forms.Label lblFech;
         private System.Windows.Forms.Label lblNom;
@@ -334,10 +331,11 @@
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSol;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

@@ -15,17 +15,18 @@ namespace GesThor
 {
     class Operacion
     {
-        private string conexion = "Data Source = localhost\\SQLEXPRESS;Initial Catalog = GesThor;Integrated Security=True;";
+        private string conexion = "Data Source = localhost\\SQLEXPRESS;Initial Catalog = GesThor;Integrated Security=True;";// Cadena de conexión a la base de datos SQL Server llamada "GesThor"
 
         #region Visualizar
 
-        public DataTable Cargar()
+        public DataTable Cargar()// Obtiene todos los registros de la vista vwInventario usando WITH(NOLOCK)
+                                 // y los devuelve en un DataTable
         {
             DataTable dt = new DataTable();
 
             SqlConnection con = new SqlConnection(conexion);
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from vwInventario with(nolock)", con);
+            SqlCommand cmd = new SqlCommand("Select * from vwInventario WITH(NOLOCK)", con); //Llamado de la Vista
 
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
@@ -36,14 +37,15 @@ namespace GesThor
         }
         #endregion Visualizar
 
-        public string AgregarEquipo(string Nombre, int Cantidad, string Estado, bool Disponibilidad)
+        public string AgregarEquipo(string Nombre, int Cantidad, string Estado, 
+            bool Disponibilidad) // Agrega un nuevo equipo a través del procedimiento almacenado `spi_AgEquipo`
         {
-            int dis = Disponibilidad == true ? 1 : 0;
+            int dis = Disponibilidad == true ? 1 : 0; // Convierte el booleano de disponibilidad en 1 (true) o 0 (false)
             try
             {
                 SqlConnection con = new SqlConnection(conexion);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("spi_AgEquipo", con);
+                SqlCommand cmd = new SqlCommand("spi_AgEquipo", con); //Llamado del StoredProcedure
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@Nombre", Nombre);
@@ -63,14 +65,15 @@ namespace GesThor
             }
         }
 
-        public string ModificarEquipo(int Id, string Nombre, int Cantidad, string Estado, bool Disponibilidad)
+        public string ModificarEquipo(int Id, string Nombre, int Cantidad, 
+            string Estado, bool Disponibilidad)  // Modifica un equipo existente con base en su Id usando el procedimiento `spu_ModEquipo`
         {
-            int dis = Disponibilidad == true ? 1 : 0;
+            int dis = Disponibilidad == true ? 1 : 0; // Convierte el booleano de disponibilidad en 1 (true) o 0 (false)
             try
             {
                 SqlConnection con = new SqlConnection(conexion);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("spu_ModEquipo", con);
+                SqlCommand cmd = new SqlCommand("spu_ModEquipo", con); //Llamado del StoredProcedure
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@Id", Id);
@@ -91,13 +94,14 @@ namespace GesThor
             }
         }
 
-        public string AgregarPrestamo(int Id_U, int Id_E, DateTime Pres, DateTime Dev, string Status)
+        public string AgregarPrestamo(int Id_U, int Id_E, DateTime Pres, 
+            DateTime Dev, string Status) // Inserta un nuevo préstamo mediante el procedimiento `spiAgPrestamo`
         {
             try
             {
                 SqlConnection con = new SqlConnection(conexion);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("spiAgPrestamo", con);
+                SqlCommand cmd = new SqlCommand("spiAgPrestamo", con); //Llamado del StoredProcedure
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@Id_U", Id_U);
@@ -118,14 +122,14 @@ namespace GesThor
             }
         }
 
-        public string ConsultaUsuario(string Mat)
+        public string ConsultaUsuario(string Mat) // Consulta el ID de un usuario a partir de su matrícula usando el procedimiento `sprConsultarIdUsuario`
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(conexion))
                 {
                     con.Open();
-                    using (SqlCommand cmd = new SqlCommand("sprConsultarIdUsuario", con))
+                    using (SqlCommand cmd = new SqlCommand("sprConsultarIdUsuario", con)) //Llamado del StoredProcedure
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Matricula", Mat);
@@ -148,7 +152,8 @@ namespace GesThor
             }
         }
 
-        public DataTable BuscarPrestamosPorMatricula(string mat)
+        public DataTable BuscarPrestamosPorMatricula(string mat) // Busca todos los préstamos realizados por un usuario con determinada matrícula
+                                                                 // usando el procedimiento almacenado `ObtenerPrestamosPorMatricula`
         {
             using (SqlConnection conn = new SqlConnection(conexion))
             {
@@ -176,7 +181,7 @@ namespace GesThor
             }
         }
 
-        public DataTable BuscarPrestamos()
+        public DataTable BuscarPrestamos() // Devuelve todos los registros de la tabla `Prestamo` usando una consulta SQL directa
         {
             using (SqlConnection conn = new SqlConnection(conexion))
             {
@@ -184,7 +189,7 @@ namespace GesThor
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("select * from Prestamo;", conn);
+                    SqlCommand cmd = new SqlCommand("select * from Prestamo;", conn); //Consulta
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -199,7 +204,7 @@ namespace GesThor
             }
         }
 
-        public bool BuscarUsuario(string mat)
+        public bool BuscarUsuario(string mat) // Verifica si un usuario existe en la base de datos a partir de su matrícula
         {
             using (SqlConnection conn = new SqlConnection(conexion))
             {
@@ -213,11 +218,11 @@ namespace GesThor
                     int valor = Convert.ToInt32(res);
                     if (valor == 1)
                     {
-                        return true;
+                        return true; // Devuelve `true` si el usuario existe (1), `false` si no (0)
                     }
                     else
                     {
-                        return false;
+                        return false; // Devuelve `false` si no (0)
                     }
                 }
                 catch (Exception)
@@ -229,7 +234,8 @@ namespace GesThor
             }
         }
 
-        public string AgregarUsuario(string matricula, string carrera, string correo, string telefono)
+        public string AgregarUsuario(string matricula, string carrera, string correo, 
+            string telefono) // Agrega un nuevo usuario a través del procedimiento almacenado `spiAgUsuario`
         {
             try
             {
@@ -261,7 +267,7 @@ namespace GesThor
             }
         }
 
-        public DataTable BuscarPrestamosActRet()
+        public DataTable BuscarPrestamosActRet() // Devuelve una lista de préstamos activos o retrasados
         {
             using (SqlConnection conn = new SqlConnection(conexion))
             {
@@ -285,8 +291,8 @@ namespace GesThor
             }
         }
 
-        public string DevolverPres(int idPrestamo, DateTime fechaDevReal, string nuevoStatus)
-        {
+        public string DevolverPres(int idPrestamo, DateTime fechaDevReal, string nuevoStatus)  // Actualiza un préstamo cuando un equipo es devuelto
+        { // Se actualiza la fecha real de devolución y el estado del préstamo
             try
             {
                 using (SqlConnection con = new SqlConnection(conexion))
