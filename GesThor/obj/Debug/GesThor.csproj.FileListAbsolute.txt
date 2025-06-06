@@ -8,7 +8,6 @@ C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.GenerateReso
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.CoreCompileInputs.cache
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.exe
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.pdb
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.AddModEquipo.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.SolResRec.resources
 C:\Users\SaulC\source\repos\NahomiCJ\Ges-Thor\GesThor\bin\Debug\GesThor.exe.config
 C:\Users\SaulC\source\repos\NahomiCJ\Ges-Thor\GesThor\bin\Debug\GesThor.exe
@@ -42,3 +41,4 @@ C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Historial.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.MenuUsuarios.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Registro.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Devolucion.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.AddModEquipo.resources

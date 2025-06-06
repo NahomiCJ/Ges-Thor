@@ -189,7 +189,8 @@ namespace GesThor
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("select * from Prestamo;", conn); //Consulta
+                    SqlCommand cmd = new SqlCommand("ObtenerPrestamos", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
