@@ -26,6 +26,7 @@ namespace GesThor
             dgvInv.DataSource = op.BuscarPrestamosActRet();
             dgvInv.Columns[0].Visible = false;
 
+
             // Se deshabilitan los campos para evitar que el usuario los edite manualmente
             txtId.Enabled = false;
             txtNombre.Enabled = false;
@@ -78,6 +79,11 @@ namespace GesThor
                 }
 
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

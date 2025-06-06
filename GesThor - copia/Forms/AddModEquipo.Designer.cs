@@ -108,6 +108,7 @@
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Volver al menú";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblId
             // 

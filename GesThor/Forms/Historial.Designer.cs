@@ -148,6 +148,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_Historial);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
             this.Name = "Historial";
             this.Text = "Historial";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Historial_FormClosed);

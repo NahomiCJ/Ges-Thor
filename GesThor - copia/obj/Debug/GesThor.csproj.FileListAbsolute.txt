@@ -41,5 +41,4 @@ C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Historial.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.MenuUsuarios.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Registro.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Devolucion.resources
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Forms.AddModEquipo.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.AddModEquipo.resources

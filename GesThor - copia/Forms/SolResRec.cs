@@ -14,6 +14,7 @@ namespace GesThor
     {
         Operacion op = new Operacion(); // Instancia de la clase Operacion para acceder a los métodos de la base de datos
         public string modo_; // Variable que determina si el formulario está en modo "Solicitar" o "Reservar"
+        Registro frm = new Registro();
         public SolResRec(string modo)
         {
             InitializeComponent();
@@ -52,9 +53,7 @@ namespace GesThor
 
         private void btnBack_Click(object sender, EventArgs e)
         {// Regresa al menú principal de usuarios
-            MenuUsuarios frm1 = new MenuUsuarios();
-            frm1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void dgvInv_SelectionChanged(object sender, EventArgs e)
@@ -139,7 +138,7 @@ namespace GesThor
             else
             {// Si el usuario no está registrado, abre formulario de registro
                 MessageBox.Show("Usuario no registrado");
-                Registro frm = new Registro();
+
                 frm.Matricula = txtMatricula.Text;
                 frm.Show();
             }

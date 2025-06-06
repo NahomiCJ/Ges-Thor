@@ -239,6 +239,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox3);
+            this.MaximizeBox = false;
             this.Name = "MenuUsuarios";
             this.Text = "MenuUsuarios";
             this.Load += new System.EventHandler(this.MenuUsuarios_Load);

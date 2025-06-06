@@ -322,15 +322,15 @@ BEGIN
     SET NOCOUNT ON;
 
     SELECT 
-        P.Id_Prestamo,
-        U.Matricula_Clave,
-        U.Carrera_Usuario,
-        U.Correo_Usuario,
-        E.Nombre_Equipo,
-        P.Fecha_Prestamo,
-        P.Fecha_Devolucion,
-        P.Fecha_DevolucionReal,
-        P.Status_Prestamo
+        P.Id_Prestamo ID,
+        U.Matricula_Clave Matricula,
+        U.Carrera_Usuario Carrera,
+        U.Correo_Usuario Correo,
+        E.Nombre_Equipo Equipo,
+        P.Fecha_Prestamo FechaPrestamo,
+        P.Fecha_Devolucion FechaDevolucion,
+        P.Fecha_DevolucionReal FechaDevolucionReal,
+        P.Status_Prestamo Estado
     FROM Prestamo P
     INNER JOIN Usuario U ON P.Id_Usuario = U.Id_Usuario
     INNER JOIN Equipo E ON P.Id_Equipo = E.Id_Equipo
@@ -366,5 +366,26 @@ BEGIN
         WHERE Id_Equipo = @IdEquipo;
     END;
 END;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR ALTER PROCEDURE ObtenerPrestamos
+AS
+BEGIN
+    SELECT 
+        P.Id_Prestamo ID,
+        U.Matricula_Clave Matricula,
+		E.Nombre_Equipo Equipo,
+        P.Fecha_Prestamo FechaPrestamo,
+        P.Fecha_Devolucion FechaDevolucion,
+        P.Fecha_DevolucionReal FechaDevReal,
+        P.Status_Prestamo Estado
+    FROM Prestamo P
+    INNER JOIN Usuario U ON P.Id_Usuario = U.Id_Usuario
+    INNER JOIN Equipo E ON P.Id_Equipo = E.Id_Equipo
+    
+END;
+
+EXEC ObtenerPrestamos
 
 

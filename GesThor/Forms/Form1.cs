@@ -37,21 +37,45 @@ namespace GesThor
 
         private void btnMod_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(dgvInventario.CurrentCell.ToString()))
+            try
             {
-                this.Hide();
-                frm = new AddModEquipo(btnMod.Text); //Pasa el texto del botón ("Modificar") como parámetro 
-                frm.Id = Convert.ToInt32(dgvInventario.CurrentRow.Cells["ID"].Value); //Extrae los valores de la fila seleccionada del DataGridView y los asigna a las propiedades del formulario frm.
-                frm.Nombre = dgvInventario.CurrentRow.Cells["Nombre"].Value.ToString();
-                frm.Cantidad = Convert.ToInt32(dgvInventario.CurrentRow.Cells["Cantidad"].Value);
-                frm.Estado = dgvInventario.CurrentRow.Cells["Estado"].Value.ToString();
-                frm.Disponibilidad = Convert.ToBoolean(dgvInventario.CurrentRow.Cells["Disponibilidad"].Value);
-                frm.Show(); //Muestra el formulario prellenado con los datos del equipo seleccionado para su modificación
-                this.Show();
+                //if (!string.IsNullOrEmpty(dgvInventario.CurrentCell.ToString()))
+                //{
+                    this.Hide();
+                    frm = new AddModEquipo(btnMod.Text); //Pasa el texto del botón ("Modificar") como parámetro 
+                    frm.Id = Convert.ToInt32(dgvInventario.CurrentRow.Cells["ID"].Value); //Extrae los valores de la fila seleccionada del DataGridView y los asigna a las propiedades del formulario frm.
+                    frm.Nombre = dgvInventario.CurrentRow.Cells["Nombre"].Value.ToString();
+                    frm.Cantidad = Convert.ToInt32(dgvInventario.CurrentRow.Cells["Cantidad"].Value);
+                    frm.Estado = dgvInventario.CurrentRow.Cells["Estado"].Value.ToString();
+                    frm.Disponibilidad = Convert.ToBoolean(dgvInventario.CurrentRow.Cells["Disponibilidad"].Value);
+                    frm.ShowDialog(); //Muestra el formulario prellenado con los datos del equipo seleccionado para su modificación
+                    this.Show();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Debe seleccionar al menos una celda");
+                //}
             }
-            else {
+            catch (Exception ex)
+            {
 
+                MessageBox.Show("Debe seleccionar al menos una celda");
             }
+            //if (!string.IsNullOrEmpty(dgvInventario.CurrentCell.ToString()))
+            //{
+            //    this.Hide();
+            //    frm = new AddModEquipo(btnMod.Text); //Pasa el texto del botón ("Modificar") como parámetro 
+            //    frm.Id = Convert.ToInt32(dgvInventario.CurrentRow.Cells["ID"].Value); //Extrae los valores de la fila seleccionada del DataGridView y los asigna a las propiedades del formulario frm.
+            //    frm.Nombre = dgvInventario.CurrentRow.Cells["Nombre"].Value.ToString();
+            //    frm.Cantidad = Convert.ToInt32(dgvInventario.CurrentRow.Cells["Cantidad"].Value);
+            //    frm.Estado = dgvInventario.CurrentRow.Cells["Estado"].Value.ToString();
+            //    frm.Disponibilidad = Convert.ToBoolean(dgvInventario.CurrentRow.Cells["Disponibilidad"].Value);
+            //    frm.ShowDialog(); //Muestra el formulario prellenado con los datos del equipo seleccionado para su modificación
+            //    this.Show();
+            //}
+            //else {
+            //    MessageBox.Show("Debe seleccionar al menos una celda");
+            //}
 
 
         }

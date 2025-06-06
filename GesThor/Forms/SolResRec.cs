@@ -15,6 +15,7 @@ namespace GesThor
         Operacion op = new Operacion(); // Instancia de la clase Operacion para acceder a los métodos de la base de datos
         public string modo_; // Variable que determina si el formulario está en modo "Solicitar" o "Reservar"
         Registro frm = new Registro();
+        byte control;
         public SolResRec(string modo)
         {
             InitializeComponent();
@@ -94,55 +95,112 @@ namespace GesThor
         private void btnSol_Click(object sender, EventArgs e)
         {
             string mat = txtMatricula.Text;
-            if (op.BuscarUsuario(mat)) // Verifica si el usuario está registrado
+            if (ValidarTxt() && ValidarNum())
             {
                 string idusu = op.ConsultaUsuario(mat);
                 string resultado, status = "Activo";
                 DateTime prestamo = dtpFecha.Value;
                 int minutos = 50 * (Convert.ToInt32(numHoras.Value)); // Calcula duración en minutos
-                
+
                 switch (modo_) //Evaluar el modo del formulario
                 {
                     case "Solicitar":
-                        // Si el modo es solicitar, la fecha y hora son inmediatas
-                        DateTime dev = dtpFecha.Value.AddMinutes(minutos);
-                        resultado = op.AgregarPrestamo(Convert.ToInt32(idusu), Convert.ToInt32(txtId.Text), prestamo, dev, status);
-                        if (string.IsNullOrEmpty(resultado))
+
+                        if (op.BuscarUsuario(mat)) // Verifica si el usuario está registrado
                         {
-                            MessageBox.Show("El registro se he agregado correctamente");
-                            this.Close();
-                            MenuUsuarios frm = new MenuUsuarios();
+                            // Si el modo es solicitar, la fecha y hora son inmediatas
+                            DateTime dev = dtpFecha.Value.AddMinutes(minutos);
+                            resultado = op.AgregarPrestamo(Convert.ToInt32(idusu), Convert.ToInt32(txtId.Text), prestamo, dev, status);
+                            if (string.IsNullOrEmpty(resultado))
+                            {
+                                MessageBox.Show("El registro se he agregado correctamente");
+                                this.Close();
+                            }
+                        }
+                        else
+                        {// Si el usuario no está registrado, abre formulario de registro
+                            MessageBox.Show("Usuario no registrado");
+
+                            frm.Matricula = txtMatricula.Text;
                             frm.Show();
                         }
                         break;
 
                     case "Reservar":
-                        // Si el modo es reservar, se toma hora y minutos específicos
-                        int hor = Convert.ToInt32(cbHora.Text);
-                        int min = Convert.ToInt32(cbMinutos.Text);
-                        DateTime reserva = new DateTime(prestamo.Year, prestamo.Month, prestamo.Day, hor, min, 0);
-                        DateTime devRes = reserva.AddMinutes(minutos);
-                        resultado = op.AgregarPrestamo(Convert.ToInt32(idusu), Convert.ToInt32(txtId.Text), reserva, devRes, status);
-                        if (string.IsNullOrEmpty(resultado))
+                        if (ValidarComboHor() && ValidarComboMin())
                         {
-                            MessageBox.Show("El registro se he agregado correctamente");
-                            this.Close();
-                            MenuUsuarios frm = new MenuUsuarios();
-                            frm.Show();
+                            if (op.BuscarUsuario(mat)) // Verifica si el usuario está registrado
+                            {
+                                // Si el modo es reservar, se toma hora y minutos específicos
+                                int hor = Convert.ToInt32(cbHora.Text);
+                                int min = Convert.ToInt32(cbMinutos.Text);
+                                DateTime reserva = new DateTime(prestamo.Year, prestamo.Month, prestamo.Day, hor, min, 0);
+                                DateTime devRes = reserva.AddMinutes(minutos);
+                                resultado = op.AgregarPrestamo(Convert.ToInt32(idusu), Convert.ToInt32(txtId.Text), reserva, devRes, status);
+                                if (string.IsNullOrEmpty(resultado))
+                                {
+                                    MessageBox.Show("El registro se he agregado correctamente");
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {// Si el usuario no está registrado, abre formulario de registro
+                                MessageBox.Show("Usuario no registrado");
+
+                                frm.Matricula = txtMatricula.Text;
+                                frm.Show();
+                            }
                         }
+
+                        else
+                        {
+                            switch (control)
+                            {  
+                                case 3:
+                                    MessageBox.Show("Hora no valida");
+                                    cbHora.Text = "";
+                                    break;
+                                case 4:
+                                    MessageBox.Show("Minuto no valido");
+                                    cbMinutos.Text = "";
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+               
+                
+            }
+            else
+            {
+                switch (control)
+                {
+                    case 1:
+                        MessageBox.Show("Ingrese un número valido");
+                        numHoras.Value = 1;
+                        break;
+                    case 2:
+                        MessageBox.Show("Debe llenar todos los campos");
+                        break;
+                    case 3:
+                        MessageBox.Show("Hora no valida");
+                        cbHora.Text = "";
+                        break;
+                    case 4:
+                        MessageBox.Show("Minuto no valido");
+                        cbMinutos.Text = "";
                         break;
                     default:
                         break;
                 }
             }
-            else
-            {// Si el usuario no está registrado, abre formulario de registro
-                MessageBox.Show("Usuario no registrado");
 
-                frm.Matricula = txtMatricula.Text;
-                frm.Show();
-            }
-            
+
         }
 
         private void cbHora_SelectedIndexChanged(object sender, EventArgs e)
@@ -190,6 +248,61 @@ namespace GesThor
                     break;
             }
         }
+
+        public bool ValidarNum()
+        {
+            if (numHoras.Value != 0)
+            {
+                return true;
+            }
+            else
+            {
+                control = 1;
+                return false;
+            }
+        }
+
+        public bool ValidarTxt()
+        {
+            if (!string.IsNullOrEmpty(txtMatricula.Text.Trim()))
+            {
+                return true;
+            }
+            else
+            {
+                control = 2;
+                return false;
+            }
+        }
+
+        public bool ValidarComboHor()
+        {
+            if (cbHora.Text == "07" || cbHora.Text == "08" || cbHora.Text == "09" || cbHora.Text == "10" ||
+                cbHora.Text == "11" || cbHora.Text == "12" || cbHora.Text == "13" || cbHora.Text == "14" || 
+                cbHora.Text == "15")
+            {
+                return true;
+            }
+            else
+            {
+                control = 3;
+                return false;
+            }
+        }
+
+        public bool ValidarComboMin()
+        {
+            if (cbMinutos.Text == "00" || cbMinutos.Text =="50")
+            {
+                return true;
+            }
+            else
+            {
+                control = 4;
+                return false;
+            }
+        }
+
     }
 
 }

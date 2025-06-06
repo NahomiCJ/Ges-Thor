@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -28,20 +29,29 @@ namespace GesThor
 
         private void btnAg_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
             frm = new AddModEquipo(btnAg.Text); // Pasa el texto del botón ("Agregar") como parámetro 
-            frm.Show();
+            frm.ShowDialog();
+            this.Show();
         }
 
         private void btnMod_Click(object sender, EventArgs e)
         {
-            frm = new AddModEquipo(btnMod.Text); //Pasa el texto del botón ("Modificar") como parámetro 
-            frm.Id = Convert.ToInt32(dgvInventario.CurrentRow.Cells["ID"].Value); //Extrae los valores de la fila seleccionada del DataGridView y los asigna a las propiedades del formulario frm.
-            frm.Nombre = dgvInventario.CurrentRow.Cells["Nombre"].Value.ToString();
-            frm.Cantidad = Convert.ToInt32(dgvInventario.CurrentRow.Cells["Cantidad"].Value);
-            frm.Estado = dgvInventario.CurrentRow.Cells["Estado"].Value.ToString();
-            frm.Disponibilidad = Convert.ToBoolean(dgvInventario.CurrentRow.Cells["Disponibilidad"].Value);
-            frm.Show(); //Muestra el formulario prellenado con los datos del equipo seleccionado para su modificación
+            if (!string.IsNullOrEmpty(dgvInventario.CurrentCell.ToString()))
+            {
+                this.Hide();
+                frm = new AddModEquipo(btnMod.Text); //Pasa el texto del botón ("Modificar") como parámetro 
+                frm.Id = Convert.ToInt32(dgvInventario.CurrentRow.Cells["ID"].Value); //Extrae los valores de la fila seleccionada del DataGridView y los asigna a las propiedades del formulario frm.
+                frm.Nombre = dgvInventario.CurrentRow.Cells["Nombre"].Value.ToString();
+                frm.Cantidad = Convert.ToInt32(dgvInventario.CurrentRow.Cells["Cantidad"].Value);
+                frm.Estado = dgvInventario.CurrentRow.Cells["Estado"].Value.ToString();
+                frm.Disponibilidad = Convert.ToBoolean(dgvInventario.CurrentRow.Cells["Disponibilidad"].Value);
+                frm.Show(); //Muestra el formulario prellenado con los datos del equipo seleccionado para su modificación
+                this.Show();
+            }
+            else {
+
+            }
 
 
         }

@@ -113,6 +113,7 @@
             // 
             // txtMatricula
             // 
+            this.txtMatricula.Enabled = false;
             this.txtMatricula.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatricula.Location = new System.Drawing.Point(299, 140);
             this.txtMatricula.Name = "txtMatricula";
@@ -263,6 +264,7 @@
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.pb1);
+            this.MaximizeBox = false;
             this.Name = "Registro";
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Registro_Load);

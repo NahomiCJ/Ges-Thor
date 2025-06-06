@@ -19,6 +19,8 @@ namespace GesThor
             InitializeComponent();
             // Al cargar el formulario, se llenan los datos del DataGridView con todos los préstamos registrados
             dgv_Historial.DataSource = op.BuscarPrestamos();
+
+            dgv_Historial.Columns[0].Visible = false;
             //dgv_Historial.DataSource = op.BuscarPrestamosPorMatricula(null);
             
         }

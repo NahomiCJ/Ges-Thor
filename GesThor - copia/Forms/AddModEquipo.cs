@@ -13,6 +13,7 @@ namespace GesThor
     public partial class AddModEquipo: Form
     {
         Operacion op = new Operacion(); //Instancia de la clase Operacion que se encargará de ejecutar las operaciones en la base de datos
+        Form1 frm = new Form1();
         public string modo_; //indica si el formulario se abrió en modo Agregar o Modificar.
         //Popiedades que representan los datos del equipo (utilizados en modo modificación).
         public int Id { get; set; }
@@ -66,7 +67,7 @@ namespace GesThor
                         {
                             MessageBox.Show("El registro se he agregado correctamente");
                             this.Close();
-                            Form1 frm = new Form1();
+                            
                             frm.Show();
                         }
                         break;
@@ -76,7 +77,7 @@ namespace GesThor
                         {
                             MessageBox.Show("El registro se he actualizado correctamente");
                             this.Close();
-                            Form1 frm = new Form1();
+                            
                             frm.Show();
                         }
                         break;
@@ -127,16 +128,9 @@ namespace GesThor
             }
         }
 
-        private void InitializeComponent()
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            this.SuspendLayout();
-            // 
-            // AddModEquipo
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "AddModEquipo";
-            this.ResumeLayout(false);
-
+            this.Close();
         }
     }
 }

@@ -334,6 +334,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox5);
+            this.MaximizeBox = false;
             this.Name = "Devolucion";
             this.Text = "Devolucion";
             this.Load += new System.EventHandler(this.Devolucion_Load);

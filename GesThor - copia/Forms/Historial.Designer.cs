@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Historial));
             this.dgv_Historial = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             this.dgv_Historial.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Historial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Historial.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Historial.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dgv_Historial.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_Historial.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -61,11 +62,20 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Historial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Historial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Historial.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Historial.EnableHeadersVisualStyles = false;
             this.dgv_Historial.Location = new System.Drawing.Point(205, 0);
             this.dgv_Historial.Name = "dgv_Historial";
             this.dgv_Historial.ReadOnly = true;
             this.dgv_Historial.RowHeadersVisible = false;
+            this.dgv_Historial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_Historial.Size = new System.Drawing.Size(744, 452);
             this.dgv_Historial.TabIndex = 0;
             this.dgv_Historial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Historial_CellContentClick);
