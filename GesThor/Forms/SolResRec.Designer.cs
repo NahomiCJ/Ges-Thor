@@ -216,7 +216,7 @@
             // 
             this.lblTab.AutoSize = true;
             this.lblTab.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTab.Location = new System.Drawing.Point(298, 78);
+            this.lblTab.Location = new System.Drawing.Point(298, 78); 
             this.lblTab.Name = "lblTab";
             this.lblTab.Size = new System.Drawing.Size(107, 16);
             this.lblTab.TabIndex = 33;
@@ -226,7 +226,7 @@
             // 
             this.pb1.BackColor = System.Drawing.Color.Transparent;
             this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
-            this.pb1.Location = new System.Drawing.Point(685, -18);
+            this.pb1.Location = new System.Drawing.Point(685, -18); //*
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(138, 147);
             this.pb1.TabIndex = 34;

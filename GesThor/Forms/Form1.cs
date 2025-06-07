@@ -33,6 +33,8 @@ namespace GesThor
             frm = new AddModEquipo(btnAg.Text); // Pasa el texto del botón ("Agregar") como parámetro 
             frm.ShowDialog();
             this.Show();
+            dgvInventario.DataSource = op.Cargar(); //Llama al método Cargar() de la clase Operacion para llenar el DataGridView
+            dgvInventario.Columns[0].Visible = false;
         }
 
         private void btnMod_Click(object sender, EventArgs e)
@@ -49,7 +51,9 @@ namespace GesThor
                     frm.Estado = dgvInventario.CurrentRow.Cells["Estado"].Value.ToString();
                     frm.Disponibilidad = Convert.ToBoolean(dgvInventario.CurrentRow.Cells["Disponibilidad"].Value);
                     frm.ShowDialog(); //Muestra el formulario prellenado con los datos del equipo seleccionado para su modificación
-                    this.Show();
+                this.Show();
+                dgvInventario.DataSource = op.Cargar(); //Llama al método Cargar() de la clase Operacion para llenar el DataGridView
+                dgvInventario.Columns[0].Visible = false;
                 //}
                 //else
                 //{

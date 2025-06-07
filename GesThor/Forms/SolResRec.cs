@@ -214,19 +214,19 @@ namespace GesThor
                     break;
                 case "08":
                     cbMinutos.Enabled = false;
-                    cbMinutos.Text = "40";
+                    cbMinutos.Text = "40"; //Asignar un valor al combobox de minutos
                     break;
                 case "09":
                     cbMinutos.Enabled = false;
-                    cbMinutos.Text = "30";
+                    cbMinutos.Text = "30"; //Asignar un valor al combobox de minutos
                     break;
                 case "10":
                     cbMinutos.Enabled = false;
-                    cbMinutos.Text = "20";
+                    cbMinutos.Text = "20"; //Asignar un valor al combobox de minutos
                     break;
                 case "11":
                     cbMinutos.Enabled = false;
-                    cbMinutos.Text = "10";
+                    cbMinutos.Text = "10"; //Asignar un valor al combobox de minutos
                     break;
                 case "12":
                     cbMinutos.Text = "";
@@ -234,15 +234,15 @@ namespace GesThor
                     break;
                 case "13":
                     cbMinutos.Enabled = false;
-                    cbMinutos.Text = "40";
+                    cbMinutos.Text = "40"; //Asignar un valor al combobox de minutos
                     break;
                 case "14":
                     cbMinutos.Enabled = false;
-                    cbMinutos.Text = "30";
+                    cbMinutos.Text = "30"; //Asignar un valor al combobox de minutos
                     break;
                 case "15":
                     cbMinutos.Enabled = false;
-                    cbMinutos.Text = "20";
+                    cbMinutos.Text = "20"; //Asignar un valor al combobox de minutos
                     break;
                 default:
                     break;
@@ -264,7 +264,7 @@ namespace GesThor
 
         public bool ValidarTxt()
         {
-            if (!string.IsNullOrEmpty(txtMatricula.Text.Trim()))
+            if (!string.IsNullOrEmpty(txtMatricula.Text.Trim()) && !string.IsNullOrEmpty(txtId.Text))
             {
                 return true;
             }
@@ -292,15 +292,39 @@ namespace GesThor
 
         public bool ValidarComboMin()
         {
-            if (cbMinutos.Text == "00" || cbMinutos.Text =="50")
+            if (cbMinutos.Enabled)
             {
-                return true;
+                if (cbMinutos.Text == "00" || cbMinutos.Text =="50")
+                {
+                    return true;
+                }
+                else
+                {
+                    control = 4;
+                    return false;
+                }
             }
             else
             {
-                control = 4;
-                return false;
+                if (cbMinutos.Text == "40" || cbMinutos.Text =="30" || cbMinutos.Text =="20" || cbMinutos.Text =="10")
+                {
+                    return true;
+                }
+                else
+                {
+                    control = 4;
+                    return false;
+                }
             }
+            //if (cbMinutos.Text == "00" || cbMinutos.Text =="50")
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    control = 4;
+            //    return false;
+            //}
         }
 
     }

@@ -12,8 +12,7 @@ namespace GesThor
 {
     public partial class MenuUsuarios : Form
     {
-        SolResRec SoliRec = new SolResRec("Solicitar");
-        SolResRec ResRec = new SolResRec("Reservar");
+        //SolResRec ResRec = new SolResRec("Reservar");
         Form1 Inv = new Form1();
         Historial His = new Historial();
         Devolucion Dev = new Devolucion();
@@ -26,6 +25,7 @@ namespace GesThor
         {
             // Al hacer clic en el botón "Solicitar", se abre el formulario SolResRec en modo "Solicitar"
             this.Hide();// Oculta el menú principal para evitar múltiples ventanas abiertas
+            SolResRec SoliRec = new SolResRec("Solicitar");
             SoliRec.ShowDialog(); // Muestra el formulario de solicitud
             this.Show();    // Mostrar menú principal 
         }
@@ -45,6 +45,7 @@ namespace GesThor
         {
             // Al hacer clic en el botón "Reservar", se abre el formulario SolResRec en modo "Reservar"
             this.Hide();   // Oculta el menú principal
+            SolResRec ResRec = new SolResRec("Reservar");
             ResRec.ShowDialog(); // Muestra el formulario de reserva
             this.Show();    // Mostrar menú principal
         }

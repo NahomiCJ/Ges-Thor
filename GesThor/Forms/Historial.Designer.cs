@@ -38,6 +38,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_regresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Historial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,12 +137,27 @@
             this.textBox1.Size = new System.Drawing.Size(151, 23);
             this.textBox1.TabIndex = 47;
             // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_regresar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_regresar.ForeColor = System.Drawing.Color.White;
+            this.btn_regresar.Location = new System.Drawing.Point(12, 410);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(88, 28);
+            this.btn_regresar.TabIndex = 48;
+            this.btn_regresar.Text = "Regresar";
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
             // Historial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(948, 450);
+            this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.txt_clave);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -167,5 +183,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_clave;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_regresar;
     }
 }

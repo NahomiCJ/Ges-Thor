@@ -233,12 +233,13 @@ CREATE OR ALTER PROCEDURE ObtenerPrestamosPorMatricula
 AS
 BEGIN
     SELECT 
-        P.Id_Prestamo,
-        U.Matricula_Clave,
-        P.Fecha_Prestamo,
-        P.Fecha_Devolucion,
-        P.Fecha_DevolucionReal,
-        P.Status_Prestamo
+		P.Id_Prestamo ID,
+        U.Matricula_Clave Matricula,
+		E.Nombre_Equipo Equipo,
+        P.Fecha_Prestamo FechaPrestamo,
+        P.Fecha_Devolucion FechaDevolucion,
+        P.Fecha_DevolucionReal FechaDevReal,
+        P.Status_Prestamo Estado
     FROM Prestamo P
     INNER JOIN Usuario U ON P.Id_Usuario = U.Id_Usuario
     INNER JOIN Equipo E ON P.Id_Equipo = E.Id_Equipo

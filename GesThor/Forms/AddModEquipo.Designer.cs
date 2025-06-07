@@ -55,7 +55,7 @@
             this.lbl1.AutoSize = true;
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(222, 51);
+            this.lbl1.Location = new System.Drawing.Point(205, 51);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(69, 27);
             this.lbl1.TabIndex = 0;

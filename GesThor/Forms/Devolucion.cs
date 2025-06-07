@@ -50,9 +50,7 @@ namespace GesThor
                 {
                     MessageBox.Show("El registro se he agregado correctamente");
                     // Se cierra este formulario y se regresa al menú principal
-                    this.Close();
-                    MenuUsuarios frm = new MenuUsuarios();
-                    frm.Show();
+                    this.Close(); 
                 }
             }
 
