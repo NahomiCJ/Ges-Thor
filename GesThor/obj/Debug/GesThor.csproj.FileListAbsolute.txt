@@ -1,15 +1,3 @@
-C:\Users\KIRA\source\repos\GesThor\GesThor\bin\Debug\GesThor.exe.config
-C:\Users\KIRA\source\repos\GesThor\GesThor\bin\Debug\GesThor.exe
-C:\Users\KIRA\source\repos\GesThor\GesThor\bin\Debug\GesThor.pdb
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.AssemblyReference.cache
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Form1.resources
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Properties.Resources.resources
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.GenerateResource.cache
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.CoreCompileInputs.cache
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.exe
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.pdb
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.AddModEquipo.resources
-C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.SolResRec.resources
 C:\Users\SaulC\source\repos\NahomiCJ\Ges-Thor\GesThor\bin\Debug\GesThor.exe.config
 C:\Users\SaulC\source\repos\NahomiCJ\Ges-Thor\GesThor\bin\Debug\GesThor.exe
 C:\Users\SaulC\source\repos\NahomiCJ\Ges-Thor\GesThor\bin\Debug\GesThor.pdb
@@ -38,8 +26,16 @@ C:\Users\SaulC\source\repos\Ges-Thor\GesThor\obj\Debug\GesThor.csproj.GenerateRe
 C:\Users\SaulC\source\repos\Ges-Thor\GesThor\obj\Debug\GesThor.csproj.CoreCompileInputs.cache
 C:\Users\SaulC\source\repos\Ges-Thor\GesThor\obj\Debug\GesThor.exe
 C:\Users\SaulC\source\repos\Ges-Thor\GesThor\obj\Debug\GesThor.pdb
+C:\Users\KIRA\source\repos\GesThor\GesThor\bin\Debug\GesThor.exe.config
+C:\Users\KIRA\source\repos\GesThor\GesThor\bin\Debug\GesThor.exe
+C:\Users\KIRA\source\repos\GesThor\GesThor\bin\Debug\GesThor.pdb
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.AssemblyReference.cache
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.AddModEquipo.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Devolucion.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Form1.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Historial.resources
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.MenuUsuarios.resources
+<<<<<<< HEAD
 C:\Users\marie\OneDrive\Escritorio\Gesthor-Lynda\GesThor\bin\Debug\GesThor.exe.config
 C:\Users\marie\OneDrive\Escritorio\Gesthor-Lynda\GesThor\bin\Debug\GesThor.exe
 C:\Users\marie\OneDrive\Escritorio\Gesthor-Lynda\GesThor\bin\Debug\GesThor.pdb
@@ -63,3 +59,12 @@ C:\Users\marie\OneDrive\Escritorio\Gesthor-Lynda\GesThor\obj\Debug\GesThor.cspro
 C:\Users\marie\OneDrive\Escritorio\Gesthor-Lynda\GesThor\obj\Debug\GesThor.csproj.CopyComplete
 C:\Users\marie\OneDrive\Escritorio\Gesthor-Lynda\GesThor\obj\Debug\GesThor.exe
 C:\Users\marie\OneDrive\Escritorio\Gesthor-Lynda\GesThor\obj\Debug\GesThor.pdb
+=======
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Properties.Resources.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Registro.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.SolResRec.resources
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.GenerateResource.cache
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.CoreCompileInputs.cache
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.exe
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.pdb
+>>>>>>> 3e8212db31b3c4b414ff8c49064b1bf45cf89a77
