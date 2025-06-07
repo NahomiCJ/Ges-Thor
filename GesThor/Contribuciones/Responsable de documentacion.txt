@@ -1,0 +1,3 @@
+Nombre: Evelin Gonzalez Lopez
+Aportacion: Encargada de la documentacion del sistema de gestion de recursos del aula.
+Actividad: Elaboracion de la mayoria de la documentacion exepto las pruebas de implementacion, documentacion tecica y de suario, despliegue, seguridad, glosario y referencias.
