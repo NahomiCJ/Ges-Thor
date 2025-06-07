@@ -44,6 +44,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=19.0.25.313, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.ReportViewer.WinForms, Version=19.0.25.313, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddModEquipo.cs">
