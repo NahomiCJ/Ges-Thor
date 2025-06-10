@@ -46,11 +46,10 @@ Optimiza el préstamo y la reserva de recursos del aula fácilmente.<br>
 ## ✨ Características
 
 - 📌 Registro y control de recursos del aula (HDMI, Cables Ethernet y Cables de audio).
-- 🔍 Búsqueda y filtrado por tipo, estado y disponibilidad.
-- 🗂️ Gestión de inventario y asignaciones.
+- 🔍 Búsqueda y filtrado por Matrículas.
+- 🗂️ Gestión de inventario.
 - 🧾 Reportes exportables.
 - 🔐 Login 
-- 👌Gestion de filtado por Matriculas
 
 ---
 
@@ -58,18 +57,19 @@ Optimiza el préstamo y la reserva de recursos del aula fácilmente.<br>
 
 | Herramienta        | Descripción                                |
 |--------------------|--------------------------------------------|
-| C# .NET            | Lenguaje principal y entorno de desarrollo |
-| SQL Server         | Base de datos relacional                   |
+| C# .NET            | Lenguaje principal y entorno de desarrollo.|
+| SQL Server         | Base de datos relacional.                  |
 | Visual Studio      | IDE para desarrollo y depuración           |
 | WinForms           | Diseño eficaz y limpio.                    |
+| GitHub             | Manejo de versiónes.                       |
 
 ---
 ## 👪 Equipo de desarollo.
-- 👩 Evelin González López – Líder y administradora de base de datos
-- 💡 Nahomi Cepeda Jiménez – Desarrolladora y capacitadora
+- 👩 Evelin González López – Líder y Administradora de base de datos
+- 💡 Nahomi Cepeda Jiménez – Desarrolladora y Capacitadora.
 - 🎨 Lynda Mariel Castillo Castro – Diseñadora
-- 😎 Saúl Eduardo Hernández Rodríguez – Analista, desarrollador y tester
-- 🧑‍💻 Roberto Emmanuel Muñoz Martínez – Desarrollador y arquitecto
+- 😎 Saúl Eduardo Hernández Rodríguez – Analista, Desarrollador y Tester.
+- 🧑‍💻 Roberto Emmanuel Muñoz Martínez – Desarrollador y Arquitecto
 
 ## 📲 Contacto directo con nuestro equipo
 
