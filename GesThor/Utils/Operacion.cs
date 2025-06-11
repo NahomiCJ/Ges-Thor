@@ -322,5 +322,82 @@ namespace GesThor
             }
         }
 
+        public string Login(string usuario, string clave)
+        {
+            ////string control;
+            //Lectura de la contraseña cifrada en la base de datos
+            byte[] hashIngresado = Seguridad.HashPassword(clave);
+
+            //Selección del usuario a través de una consulta por medio de los datos ingreados 
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                string query = "SELECT Contraseña FROM Administrador WHERE Nombre_Administrador = @Nombre";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Nombre", usuario);
+
+                con.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        //Contraseña convertida en bytes para comprobar la contraseña
+                        byte[] hashAlmacenado = (byte[])reader["Contraseña"];
+
+                        if (Seguridad.CompararHashes(hashAlmacenado, hashIngresado))
+                        {
+                            //Indicación del login del correcto en caso de que el usuario exista en la BD 
+                            //MessageBox.Show("Login correcto.");
+                            return "Login correcto.";
+                        }
+                        else
+                        {
+                            //Letrero de que el usuario ingreso la contraseña de manera incorrecta 
+                            //MessageBox.Show("Contraseña incorrecta.");
+                            return "Contraseña incorrecta.";
+                        }
+                    }
+                    else
+                    {
+                        //Valida indicando que el usuario principalmente no exista 
+                        //MessageBox.Show("Usuario no encontrado.");
+                        return "Usuario no encontrado.";
+                    }
+                }
+            }
+        }
+
+        #region Clase Seguridad 
+        //Clase Seguridad para heahear la contraseña que le usuario ingrese 
+        public static class Seguridad
+        {
+            public static byte[] HashPassword(string password)
+            {
+                using (var sha256 = SHA256.Create())
+                {
+                    byte[] bytes = Encoding.UTF8.GetBytes(password);
+                    return sha256.ComputeHash(bytes);
+                }
+            }
+
+            #endregion
+
+
+
+            #region Comparación de hasheo
+
+            //Clase para comparar el hasheo
+
+            public static bool CompararHashes(byte[] hash1, byte[] hash2)
+            {
+                if (hash1.Length != hash2.Length) return false;
+                for (int i = 0; i < hash1.Length; i++)
+                {
+                    if (hash1[i] != hash2[i]) return false;
+                }
+                return true;
+            }
+        }
+
+        #endregion
     }
 }

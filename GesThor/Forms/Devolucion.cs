@@ -60,7 +60,6 @@ namespace GesThor
         // Evento que se ejecuta cuando se cambia la selección de filas en el DataGridView
         private void dgvInv_SelectionChanged(object sender, EventArgs e)
         {
-            string temp;
             // Se asegura de que al menos una fila esté seleccionada
             if (dgvInv.SelectedRows.Count > 0)
             {

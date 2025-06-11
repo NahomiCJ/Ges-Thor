@@ -3,16 +3,49 @@ GO
 USE GesThor;
 GO
 
+--CREATE TABLE Administrador (
+  --Id_Administrador INT IDENTITY PRIMARY KEY,
+--  Nombre_Administrador VARCHAR(50) NOT NULL,
+  --Telefono_Administrador VARCHAR(15),
+  --Correo_Administrador VARCHAR(100) UNIQUE NOT NULL
+--);
+
 CREATE TABLE Administrador (
   Id_Administrador INT IDENTITY PRIMARY KEY,
   Nombre_Administrador VARCHAR(50) NOT NULL,
+  Correo_Administrador VARCHAR(100) UNIQUE NOT NULL,
   Telefono_Administrador VARCHAR(15),
-  Correo_Administrador VARCHAR(100) UNIQUE NOT NULL
+  Contraseña VARCHAR(10) NOT NULL
 );
-INSERT INTO Administrador (Nombre_Administrador, Correo_Administrador, Telefono_Administrador)
-VALUES ('Cesar Moises Rosales Ramirez', 'Cesar.rosales@tecsanpedro.edu.mx', '8711433414');
 
 
+INSERT INTO Administrador (Nombre_Administrador, Correo_Administrador, Telefono_Administrador, Contraseña)
+VALUES ('Cesar Moises Rosales Ramirez', 'Cesar.rosales@tecsanpedro.edu.mx','8711433414', 'contraseña');
+
+INSERT INTO Administrador (Nombre_Administrador, Correo_Administrador, Telefono_Administrador, Contraseña)
+VALUES ('Admin1', 'yzx1585@gmail.com','8721217321', 'Chilakil');
+
+ALTER TABLE Administrador
+ADD Contraseña_Hash VARBINARY(32);
+
+UPDATE Administrador
+SET Contraseña_Hash = HASHBYTES('SHA2_256', Contraseña);
+
+SELECT Id_Administrador, Contraseña, Contraseña_Hash
+FROM Administrador;
+
+ALTER TABLE Administrador
+DROP COLUMN Contraseña;
+
+EXEC sp_rename 'Administrador.Contraseña_Hash', 'Contraseña', 'COLUMN';
+
+
+
+
+
+SELECT Contraseña FROM Administrador WHERE Nombre_Administrador = 'Cesar Moises Rosales Ramirez'
+
+--drop table Administrador
 
 CREATE TABLE Equipo (
   Id_Equipo INT IDENTITY PRIMARY KEY,

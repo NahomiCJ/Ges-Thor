@@ -60,7 +60,7 @@ namespace GesThor
                 //    MessageBox.Show("Debe seleccionar al menos una celda");
                 //}
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 MessageBox.Show("Debe seleccionar al menos una celda");

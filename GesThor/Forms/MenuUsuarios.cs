@@ -16,9 +16,11 @@ namespace GesThor
         Form1 Inv = new Form1();
         Historial His = new Historial();
         Devolucion Dev = new Devolucion();
-        public MenuUsuarios()
+        string modo_;
+        public MenuUsuarios(string modo)
         {
             InitializeComponent();
+            modo_ = modo;
         }
 
         private void btn_FormSolicitar_Click(object sender, EventArgs e)
@@ -38,7 +40,13 @@ namespace GesThor
 
         private void MenuUsuarios_Load(object sender, EventArgs e)
         {
-
+            if (modo_ == "Usuario")
+            {
+                textBox1.Visible = false;
+                btn_Inventario.Enabled = false;
+                btn_Inventario.Visible = false;
+                pictureBox4.Visible = false;
+            }
         }
 
         private void btn_Reservar_Click(object sender, EventArgs e)

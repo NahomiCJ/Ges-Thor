@@ -42,3 +42,4 @@ C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.GenerateReso
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.csproj.CoreCompileInputs.cache
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.exe
 C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.pdb
+C:\Users\KIRA\source\repos\GesThor\GesThor\obj\Debug\GesThor.Forms.Login.resources
