@@ -327,6 +327,10 @@ namespace GesThor
             //}
         }
 
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            dtpFecha.MinDate = DateTime.Now;
+        }
     }
 
 }
