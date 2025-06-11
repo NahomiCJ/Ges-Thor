@@ -1,0 +1,14 @@
+C:\Users\LapOne MX\source\repos\Formulario de Login\bin\Debug\Formulario de Login.exe.config
+C:\Users\LapOne MX\source\repos\Formulario de Login\bin\Debug\Formulario de Login.exe
+C:\Users\LapOne MX\source\repos\Formulario de Login\bin\Debug\Formulario de Login.pdb
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario de Login.csproj.AssemblyReference.cache
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario_de_Login.Properties.Resources.resources
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario de Login.csproj.GenerateResource.cache
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario de Login.csproj.CoreCompileInputs.cache
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario de Login.exe
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario de Login.pdb
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario_de_Login.Login.resources
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario_de_Login.Registro.resources
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario_de_Login.CentrodeRecuperación.resources
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario_de_Login.Recuperacion.resources
+C:\Users\LapOne MX\source\repos\Formulario de Login\obj\Debug\Formulario_de_Login.Recuperacion2.resources
