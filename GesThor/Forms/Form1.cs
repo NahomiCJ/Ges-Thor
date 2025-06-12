@@ -23,6 +23,7 @@ namespace GesThor
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Text = "Inventario";
             dgvInventario.DataSource = op.Cargar(); //Llama al método Cargar() de la clase Operacion para llenar el DataGridView
             dgvInventario.Columns[0].Visible = false;
         }

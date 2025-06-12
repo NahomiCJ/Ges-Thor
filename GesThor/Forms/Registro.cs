@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
 
 namespace GesThor
 {
@@ -25,7 +26,7 @@ namespace GesThor
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (ValidarTxt() && ValidarCombo())
+            if (ValidarTxt() && IsValidEmail(txtCorreo.Text.Trim()))
             {
                 // Llama al método que registra al usuario en la base de datos
                 string resultado = op.AgregarUsuario(
@@ -96,6 +97,55 @@ namespace GesThor
             {
                 control = 2;
                 return false;
+            }
+        }
+
+        // Declaración de la función de validación
+        public static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email)) return false; // Verifica si la cadena es nula o vacía
+
+            // Utiliza la expresión regular para validar el correo electrónico
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            Match match = Regex.Match(email, pattern, RegexOptions.IgnoreCase);
+
+            return match.Success; // Retorna true si la expresión regular coincide
+        }
+
+        // Evento Validating del TextBox
+        private void txtCorreo_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!IsValidEmail(txtCorreo.Text))
+            {
+                // Si la validación falla, muestra un error (ejemplo con un Label)
+                MessageBox.Show("El correo electrónico no es válido.");
+                //errorLabel.Text = "El correo electrónico no es válido.";
+                //errorLabel.Visible = true;
+                e.Cancel = true; // Anula la validación
+                txtCorreo.Focus(); // Enfoca el TextBox para que el usuario lo pueda corregir
+            }
+            else
+            {
+                // Si la validación es exitosa, oculta el mensaje de error
+                //errorLabel.Visible = false;
+            }
+        }
+
+        private void txtCorreo_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (!IsValidEmail(txtCorreo.Text))
+            {
+                // Si la validación falla, muestra un error (ejemplo con un Label)
+                MessageBox.Show("El correo electrónico no es válido.");
+                //errorLabel.Text = "El correo electrónico no es válido.";
+                //errorLabel.Visible = true;
+                e.Cancel = true; // Anula la validación
+                txtCorreo.Focus(); // Enfoca el TextBox para que el usuario lo pueda corregir
+            }
+            else
+            {
+                // Si la validación es exitosa, oculta el mensaje de error
+                //errorLabel.Visible = false;
             }
         }
     }

@@ -76,7 +76,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(218, 156);
+            this.pictureBox1.Location = new System.Drawing.Point(214, 156);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(446, 104);
             this.pictureBox1.TabIndex = 56;
@@ -86,7 +86,7 @@
             // 
             this.txtClave.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.Location = new System.Drawing.Point(344, 350);
-            this.txtClave.MaxLength = 10;
+            this.txtClave.MaxLength = 15;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(179, 23);
             this.txtClave.TabIndex = 57;

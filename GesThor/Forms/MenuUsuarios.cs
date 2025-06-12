@@ -15,7 +15,7 @@ namespace GesThor
         //SolResRec ResRec = new SolResRec("Reservar");
         Form1 Inv = new Form1();
         Historial His = new Historial();
-        Devolucion Dev = new Devolucion();
+        //Devolucion Dev = new Devolucion();
         string modo_;
         public MenuUsuarios(string modo)
         {
@@ -33,19 +33,24 @@ namespace GesThor
         }
 
         private void btn_regresar_Click(object sender, EventArgs e)
-        { 
+        {
             // Cierra toda la aplicación. Uso provisional mientras no se tenga un formulario de Login.
-            Application.Exit();
+            this.Close();
         }
 
         private void MenuUsuarios_Load(object sender, EventArgs e)
         {
             if (modo_ == "Usuario")
             {
+                this.Text = "Menú " + modo_;
                 textBox1.Visible = false;
                 btn_Inventario.Enabled = false;
                 btn_Inventario.Visible = false;
                 pictureBox4.Visible = false;
+            }
+            else
+            {
+                this.Text = "Menú " + modo_;
             }
         }
 
@@ -76,10 +81,16 @@ namespace GesThor
 
         private void btnDev_Click(object sender, EventArgs e)
         {
+            Devolucion Dev = new Devolucion();
             // Abre el formulario de devoluciones desde el botón correspondiente
             this.Hide();// Oculta el menú principal
             Dev.ShowDialog(); // Muestra el formulario de devolución de recursos
             this.Show();  // Mostrar menú principal
+        }
+
+        private void MenuUsuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Application.Exit();
         }
     }
 }

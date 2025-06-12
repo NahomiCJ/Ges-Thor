@@ -31,7 +31,7 @@ namespace GesThor
 
         private void AddModEquipo_Load(object sender, EventArgs e)
         {
-
+            this.Text = modo_;
             if (modo_ == "Modificar")
             {
                 lbl1.Text = modo_;

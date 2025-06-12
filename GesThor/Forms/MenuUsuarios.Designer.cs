@@ -242,6 +242,7 @@
             this.MaximizeBox = false;
             this.Name = "MenuUsuarios";
             this.Text = "MenuUsuarios";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuUsuarios_FormClosed);
             this.Load += new System.EventHandler(this.MenuUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

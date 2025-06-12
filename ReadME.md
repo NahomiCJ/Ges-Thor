@@ -85,9 +85,30 @@ Optimiza el préstamo y la reserva de recursos del aula fácilmente.<br>
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/Ges-Thor.git
+1. git clone https://github.com/tu-usuario/Ges-Thor.git
 cd Ges-Thor
 ```
+```bash
+2. Inicio de los Scripts
+Los scripts se encuentran en la carpeta "Ges-Thor" dentro de la carpeta "Datos".
+Pasos: Ejecutar El SQLQuery1Ges-Thor2.1
+       Dar clic en conectar dentro de tu SQLServer
+       Ejecutar el script para la creación de la Base de datos "Ges-Thor" 
+```
+```bash
+3. Inicio del proyecto.
+      Abrir el ejecutable Gesthor.sln
+      Revisión de que el programa se haya ejecutado correctamente.
+```
+```bash
+4. Ejectuable
+Si deseas utilizar en .exe 
+Pasos: Clonar repositorio 
+      Abrir la carpeta "Ges-Thor"
+      Abrir la carpeta "bin"
+      Abrir la carpeta "Release" donde encontraras el .exe para su ejecución.
+```
+
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia MIT.

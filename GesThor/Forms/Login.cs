@@ -19,6 +19,7 @@ namespace GesThor.Forms
         public Login()
         {
             InitializeComponent();
+            this.Text = "Bienvenido";
         }
 
         private void btnAcceder_Click(object sender, EventArgs e)
@@ -34,6 +35,8 @@ namespace GesThor.Forms
                         frm = new MenuUsuarios("Admin");
                         frm.ShowDialog();
                         this.Show();
+                        txtClave.Clear();
+                        txtNombre.Clear();
                     }
                     else
                     {
@@ -41,6 +44,8 @@ namespace GesThor.Forms
                         frm = new MenuUsuarios("Usuario");
                         frm.ShowDialog();
                         this.Show();
+                        txtClave.Clear();
+                        txtNombre.Clear();
                     }
                     break;
                 case "Contraseña incorrecta.":
