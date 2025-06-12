@@ -10,12 +10,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Configuration;
 
 namespace GesThor
 {
     class Operacion
     {
-        private string conexion = "Data Source = localhost\\SQLEXPRESS;Initial Catalog = GesThor;Integrated Security=True;";// Cadena de conexión a la base de datos SQL Server llamada "GesThor"
+        //private string conexion = File.ReadAllText("conexion.txt");
+        //private string conexion = "Data Source = localhost\\SQLEXPRESS;Initial Catalog = GesThor;Integrated Security=True;";// Cadena de conexión a la base de datos SQL Server llamada "GesThor"
+        private string conexion = ConfigurationManager.ConnectionStrings["MiConexion"].ConnectionString;
+
 
         #region Visualizar
 

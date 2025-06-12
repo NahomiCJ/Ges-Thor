@@ -47,6 +47,7 @@ namespace GesThor
                 btn_Inventario.Enabled = false;
                 btn_Inventario.Visible = false;
                 pictureBox4.Visible = false;
+                pb1.Enabled = false;
             }
             else
             {
