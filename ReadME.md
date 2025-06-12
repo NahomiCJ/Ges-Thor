@@ -105,8 +105,7 @@ Pasos: Ejecutar El SQLQuery1Ges-Thor2.1
 Si deseas utilizar en .exe 
 Pasos: Clonar repositorio 
       Abrir la carpeta "Ges-Thor"
-      Abrir la carpeta "bin"
-      Abrir la carpeta "Release" donde encontraras el .exe para su ejecución.
+      Abrir la carpeta "Ejecutable" donde encontraras el .exe para su ejecución.
 ```
 
 ## 📄 Licencia
