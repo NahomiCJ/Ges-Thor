@@ -181,7 +181,7 @@ namespace GesThor
                 switch (control)
                 {
                     case 1:
-                        MessageBox.Show("Ingrese un número valido");
+                        MessageBox.Show("Ingrese un número de horas valido");
                         numHoras.Value = 1;
                         break;
                     case 2:
@@ -199,8 +199,6 @@ namespace GesThor
                         break;
                 }
             }
-
-
         }
 
         private void cbHora_SelectedIndexChanged(object sender, EventArgs e)

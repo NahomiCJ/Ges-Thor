@@ -107,7 +107,7 @@ Pasos: Clonar repositorio
       Abrir la carpeta "Ges-Thor"
       Abrir la carpeta "Ejecutable" donde encontraras el .exe para su ejecución.
 Conexion:
-      Modificar el archivo "App.config" para la conexión de base de datos local
+      Modificar el archivo "GesThor.exe.config" para la conexión de base de datos local
                 Dentro del archivo deberas cambiar el nombre del server a tu local(Esto se encuentra al conectar en tu SQL Server "Server Name:")
 ```
 

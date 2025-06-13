@@ -12,11 +12,10 @@ namespace GesThor
 {
     public partial class MenuUsuarios : Form
     {
-        //SolResRec ResRec = new SolResRec("Reservar");
-        Form1 Inv = new Form1();
-        Historial His = new Historial();
-        //Devolucion Dev = new Devolucion();
-        string modo_;
+        
+        Form1 Inv = new Form1(); // Instancia del formulario de inventario
+        Historial His = new Historial(); // Instancia del formulario de historial
+        string modo_; // Variable de control del formulario
         public MenuUsuarios(string modo)
         {
             InitializeComponent();
@@ -91,7 +90,15 @@ namespace GesThor
 
         private void MenuUsuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Application.Exit();
+            var result = MessageBox.Show("¿Desea regresar al Login?", "Salida", MessageBoxButtons.YesNo); // mostrar un mensaje para decidir accion: Cerrar el formulario o cerrar la aplicacion por completo
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }
