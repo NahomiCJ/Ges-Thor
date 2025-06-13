@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("GesThor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Sistema de gestión de recursos del aula")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP")]
+[assembly: AssemblyCompany("Equipo_GesThor")]
 [assembly: AssemblyProduct("GesThor")]
 [assembly: AssemblyCopyright("Copyright © HP 2025")]
 [assembly: AssemblyTrademark("")]

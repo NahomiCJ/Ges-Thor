@@ -176,7 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="thor_img.ico" />
-    <Content Include="thor_img3.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

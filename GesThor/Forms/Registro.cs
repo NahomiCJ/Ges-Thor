@@ -52,7 +52,7 @@ namespace GesThor
 
                         break;
                     case 2: // La carrera no corresponde a las opciones proporcionadas o esta vacia
-                        MessageBox.Show("Ingrese una cerrera válida");
+                        MessageBox.Show("Ingrese una carrera válida");
                         cbCarrera.Text = "";
                         break;
                     case 3: // El correo electronico no es válido
